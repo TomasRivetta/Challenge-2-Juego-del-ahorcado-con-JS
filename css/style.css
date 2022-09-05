@@ -1,0 +1,71 @@
+body{
+    background: #98FB98;
+    width: auto;
+    height: auto;
+    position: relative;
+}
+
+header{
+    width: 100%;
+    height: 100px;
+}
+
+.logo{
+    display: flex;
+    margin-top: 30px;
+    width: 10px;
+    position: absolute;
+}
+
+.botonIniciar{
+    width: 25%;
+    height: 20%;
+    margin-top: 13%;
+    left: 38%;
+    position: absolute;
+
+    background: #67e499;
+    border: 3px solid black; 
+    border-radius: 20px;
+    padding: 40px;
+
+    font-family: 'Prompt', sans-serif;
+    font-size: 15px;
+    line-height: 20%;
+    
+    cursor: pointer;
+}
+
+.botonAgregar{
+    width: 25%;
+    height: 20%;
+    margin-top: 22%;
+    left: 38%;
+    position: absolute;
+
+    background: #67e499;
+    border: 3px solid black; 
+    border-radius: 20px;
+    padding: 40px;
+
+    font-family: 'Prompt', sans-serif;
+    font-size: 15px;
+
+    line-height: 20%;
+    cursor: pointer;
+}
+
+.botonIniciar:hover, .botonAgregar:hover{
+    color: white;
+    font-size: 20px;
+    transition-duration: 0.5s;
+}
+
+.footer{
+    margin-top: 38%;
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+
+}
