@@ -23,8 +23,35 @@
         </div>
     </header>
     <main>
-        <a href="juego.html"><button class="botonIniciar">Iniciar Juego</button></a>
-        <a href="agregarPalabra.html"><button class="botonAgregar">Agregar nueva palabra</button></a>
+
+        <div>
+
+            <button class="botonIniciar" id="boton" onclick="mostrar(),crearPalabraSecreta();">Iniciar Juego</button>
+            <button class="botonAgregar">Agregar nueva palabra</button>
+
+        </div>
+
+        <div id="mostrarJuego">
+            <div>
+                <canvas id="micanvas">
+                    <div class="mostrarLetrasGuiones">
+                        <div class="mostrarguiones">
+                        </div>
+        
+                        <div class="mostrarLetrasUsadas">
+                        </div>
+                    </div>
+                </canvas>
+            </div>
+
+            <div>
+                <button class="boton-nuevoJuego" onclick="crearPalabraSecreta()">Nuevo Juego</button>
+                <button class="boton-Rendirse">Rendirse</button>
+                <button class="boton-agregarPalabra">Agregar Palabra</button>
+            </div>
+
+        </div>
+        
     </main>
     <footer>
         <div class="footer">
@@ -33,5 +60,7 @@
             <a href="https://www.linkedin.com/in/tomas-rivetta-1b324a246/" target="_blanck"><img class="logoLinkedin" src="image/linkedin.png"></a>
         </div>
     </footer>
+
+    <script src="JavaScript/coding.js"></script>
 </body>
 </html>

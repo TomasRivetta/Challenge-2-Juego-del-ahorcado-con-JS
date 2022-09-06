@@ -11,11 +11,14 @@ header{
 }
 
 .logo{
-    display: flex;
     margin-top: 40px;
     left: 50px;
     width: 10px;
     position: absolute;
+}
+
+#mostrarJuego{
+    display: none;
 }
 
 .botonIniciar{
@@ -69,7 +72,6 @@ header{
     height: 40px;
     text-align: center;
     font-family: 'Prompt', sans-serif;
-
 }
 
 /* ESTILOS DE EL HTML JUEGO */
@@ -77,9 +79,9 @@ header{
 canvas{
     position: absolute;
     width: 800px;
-    height: 300px;
+    height: 400px;
     left: 20%;
-    background-color: black;
+    background-color: white;
 }
 
 .mostrarLetrasGuiones{
