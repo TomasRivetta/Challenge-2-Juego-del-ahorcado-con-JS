@@ -1,0 +1,1 @@
+let palabras = ["HTML", "CSS", "JAVASCRIPT"]

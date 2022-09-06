@@ -12,7 +12,8 @@ header{
 
 .logo{
     display: flex;
-    margin-top: 30px;
+    margin-top: 40px;
+    left: 50px;
     width: 10px;
     position: absolute;
 }
@@ -67,5 +68,88 @@ header{
     width: 100%;
     height: 40px;
     text-align: center;
+    font-family: 'Prompt', sans-serif;
 
+}
+
+/* ESTILOS DE EL HTML JUEGO */
+
+canvas{
+    position: absolute;
+    width: 800px;
+    height: 300px;
+    left: 20%;
+    background-color: black;
+}
+
+.mostrarLetrasGuiones{
+    top: 400px;
+    left: 20%;
+    width: 800px;
+    height: 100px;
+    position: absolute;
+    background-color: blue;
+}
+
+.boton-nuevoJuego{
+    width: 20%;
+    height: 20%;
+    margin-top: 32%;
+    left: 10%;
+    position: absolute;
+
+    background: #67e499;
+    border: 3px solid black; 
+    border-radius: 20px;
+    padding: 25px;
+
+    font-family: 'Prompt', sans-serif;
+    font-size: 15px;
+
+    line-height: 20%;
+    cursor: pointer;
+}
+
+.boton-Rendirse{
+    width: 20%;
+    height: 20%;
+    margin-top: 32%;
+    left: 38%;
+    position: absolute;
+
+    background: #67e499;
+    border: 3px solid black; 
+    border-radius: 20px;
+    padding: 25px;
+
+    font-family: 'Prompt', sans-serif;
+    font-size: 15px;
+
+    line-height: 20%;
+    cursor: pointer;
+}
+
+.boton-agregarPalabra{
+    width: 20%;
+    height: 20%;
+    margin-top: 32%;
+    left: 66%;
+    position: absolute;
+
+    background: #67e499;
+    border: 3px solid black; 
+    border-radius: 20px;
+    padding: 25px;
+
+    font-family: 'Prompt', sans-serif;
+    font-size: 15px;
+
+    line-height: 20%;
+    cursor: pointer;
+}
+
+.boton-nuevoJuego:hover, .boton-Rendirse:hover, .boton-agregarPalabra:hover{
+    color: white;
+    font-size: 20px;
+    transition-duration: 0.5s;
 }
