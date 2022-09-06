@@ -76,13 +76,14 @@ header{
 
 /* ESTILOS DE EL HTML JUEGO */
 
-canvas{
+#micanvas{
     position: absolute;
     width: 800px;
     height: 400px;
     left: 20%;
-    background-color: white;
+    background-color: black;
 }
+
 
 .mostrarLetrasGuiones{
     top: 400px;

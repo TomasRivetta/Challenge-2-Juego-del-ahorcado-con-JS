@@ -26,21 +26,25 @@
 
         <div>
 
-            <button class="botonIniciar" id="boton" onclick="mostrar(),crearPalabraSecreta();">Iniciar Juego</button>
-            <button class="botonAgregar">Agregar nueva palabra</button>
+            <button class="botonIniciar" id="boton-iniciar" onclick="ocultar(),mostrar(),crearPalabraSecreta(),verificarTeclaLetra();">Iniciar Juego</button>
+            <button class="botonAgregar" id="boton-agregar">Agregar nueva palabra</button>
 
         </div>
 
         <div id="mostrarJuego">
             <div>
                 <canvas id="micanvas">
+
                     <div class="mostrarLetrasGuiones">
+
                         <div class="mostrarguiones">
                         </div>
-        
+            
                         <div class="mostrarLetrasUsadas">
                         </div>
+
                     </div>
+
                 </canvas>
             </div>
 
