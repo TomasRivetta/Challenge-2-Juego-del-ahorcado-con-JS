@@ -31,6 +31,8 @@ function crearPalabraSecreta(){
 
     //MUESTRA EN CONSOLA PRUEBA
     console.log(palabraAleatoria)
+
+    return palabraAleatoria
 }
 
 
@@ -56,7 +58,7 @@ function guionesPalabra(palabraAleatoria){
         movimiento++
     }
     //MUESTRA EN CONSOLA PRUEBA
-    console.log(guiones)
+    //console.log(guiones)
 }
 
 
@@ -76,12 +78,46 @@ function verificarTeclaLetra(){
 
 function verificacion(event){
     const teclaPresionada = event.key
-}
 
+    console.log(teclaPresionada)
+
+    key = event.KeyCode || event.which;
+    tecla = String.fromCharCode(key).toString();
+    letrasAceptadas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    if (letrasAceptadas.indexOf(tecla) == -1){
+        alert("Ingrese solo letras mayúsculas");
+    }
+    else
+    {
+        dibujarLetra(palabraAleatoria,teclaPresionada)
+    }
+
+}
 
 //FUNCION: DIBUJAR LETRA CORRECTA
 
 function dibujarLetra(palabraAleatoria,teclaPresionada){
+
+
+    let palabra = palabraAleatoria
+    let tecla = teclaPresionada;
+    
+    let movimiento = 13 * 2
+    for(i = 0; i < palabra.length; i++)
+    {
+        if(tecla == palabra[i])
+        {
+            ctx.translate(movimiento, 0);
+            ctx.font="10pt Verdana";
+            ctx.fillStyle = "white";
+            ctx.fillText(tecla,-96.3,120);
+            movimiento++
+        }
+    }
+    
+    //dibujarLetraIncorrecta(teclaPresionada,palabra)
+
+    /*
     let palabra = palabraAleatoria
     let tecla = teclaPresionada
     for(i = 0; i < palabra.length; i++)
@@ -90,16 +126,34 @@ function dibujarLetra(palabraAleatoria,teclaPresionada){
         {
             ctx.font="10pt Verdana";
             ctx.fillStyle = "white";
-            ctx.fillText(tecla,0,145);
+            ctx.fillText(palabra,0,130);
         }
+    }*/
+
+    //MUESTRA LA PALABRA ELEGIDA PARA PRUEBA
+    //ctx.font="10pt Verdana";
+    //ctx.fillStyle = "white";
+    //ctx.fillText(palabra,-25,145,);
+    
+}
+
+
+//FUNCION: DIBUJAR LETRA INCORRECTA
+/*
+function dibujarLetraIncorrecta(teclaPresionada,palabras){
+
+    let tecla = teclaPresionada
+    let palabra =  palabras
+    if(tecla != palabra[i])
+    {
+        ctx.font="10pt Verdana";
+        ctx.fillStyle = "white";
+        ctx.fillText(tecla,0,145);
     }
 
+    //MUESTRA LA PALABRA ELEGIDA PARA PRUEBA
+    //ctx.font="10pt Verdana";
+    //ctx.fillStyle = "white";
+    //ctx.fillText(palabra,-25,145,);
     
-    ctx.font="10pt Verdana";
-    ctx.fillStyle = "white";
-    ctx.fillText(palabra,0,145);
-
-    //var centerX = canvas.width/2;
-
-
-}
+}*/

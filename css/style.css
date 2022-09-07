@@ -153,6 +153,4 @@ header{
 
 .boton-nuevoJuego:hover, .boton-Rendirse:hover, .boton-agregarPalabra:hover{
     color: white;
-    font-size: 20px;
-    transition-duration: 0.5s;
 }
