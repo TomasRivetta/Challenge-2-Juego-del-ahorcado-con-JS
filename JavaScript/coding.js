@@ -374,6 +374,11 @@ function mostrarAgregarPalabra(){
 //FUNCION: AGREGAR PALABRA
 function agregarPalabra(){
 
+    let textoUsuario = document.getElementById("textoInput").value
+    textoUsuario.toUpperCase()
+    palabras.push(textoUsuario)
+    alert("SE AGREGO LA PALABRA CON EXITO")
+    cancelar()
 }
 
 function cancelar(){
