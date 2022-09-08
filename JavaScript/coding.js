@@ -33,7 +33,11 @@ function crearPalabraSecreta(){
     //MUESTRA EN CONSOLA PRUEBA
     console.log(palabraAleatoria)
 
+    //reinicio de intentos para dibujarelAHORACADO
+    intentos = 0
+
     return palabraAleatoria
+
 }
 
 
@@ -92,14 +96,10 @@ function verificacion(event){
 
 function dibujarLetra(teclaPresionada){
 
-
     let palabra = palabraAleatoria
     let tecla = teclaPresionada;
     console.log(tecla)
 
-
-    //
-    
     let movimiento = 13 * 2
     for(i = 0; i < palabra.length; i++)
     {
@@ -129,12 +129,101 @@ function dibujarLetra(teclaPresionada){
 //FUNCION: DIBUJAR LETRA INCORRECTA
 
 function dibujarLetraIncorrecta(teclaPresionada){
-
     let tecla = teclaPresionada
 
     ctx.font="10pt Verdana";
     ctx.fillStyle = "white";
     ctx.fillText(tecla,0,145);
 
+    dibujar()
+
 }
+
+
+//FUNCION: DIBUJAR HORCA
+let intentos = 0
+function dibujar(){
+
+    if(intentos == 0)
+    {
+        //DIBUJAR LA HORCA
+        dibujarHorca()
+        console.log("HORCA")
+        intentos++
+    }
+    else if(intentos == 1)
+    {
+        console.log("CABEZA")
+        intentos++
+    }
+    else if(intentos == 2)
+    {
+        console.log("TRONCO")
+        intentos++
+
+    }
+    else if(intentos == 3)
+    {
+        console.log("PIERNA IZQUIERDA")
+        intentos++
+
+    }
+    else if(intentos == 4)
+    {
+        console.log("PIERNA DERECHA")
+        intentos++
+
+    }
+    else if(intentos == 5)
+    {
+        console.log("BRAZO IZQUIERDO")
+        intentos++
+
+    }
+    else
+    {
+        console.log("BRAZO DERECHO")
+        alert("PERDISTE")
+    }
+}
+
+//DIBUJAR LA HORCA
+function dibujarHorca()
+{
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = "#FF0000";
+
+    //linea horizontal
+    ctx.beginPath();
+    ctx.moveTo(-80, 100);
+    ctx.lineTo(100, 100);
+    ctx.stroke();
+    
+    //linea vertical
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(0, 100);
+    ctx.stroke();
+
+    //linea horizontal
+    ctx.beginPath();
+    ctx.moveTo(100, -10);
+    ctx.lineTo(0, 100);
+    ctx.stroke();
+
+    //linea para abajo
+    ctx.beginPath();
+    ctx.moveTo(50, -80);
+    ctx.lineTo(50, 30);
+    ctx.stroke();
+
+}
+
+//DIBUJAR LA CABEZA
+//DIBUJAR TRONCO
+//DIBUJAR LA PIERNA IZQUIERDA
+//DIBUJAR LA PIERNA DERECHA
+//DIBUJAR EL BRAZO IZQUIERDO
+//DIBUJAR EL BRAZO DERECHO
+
 
