@@ -125,7 +125,6 @@ function dibujarLetra(teclaPresionada){
     
 }
 
-
 //FUNCION: DIBUJAR LETRA INCORRECTA
 
 function dibujarLetraIncorrecta(teclaPresionada){
@@ -153,38 +152,45 @@ function dibujar(){
     }
     else if(intentos == 1)
     {
+        dibujarCabeza()
         console.log("CABEZA")
         intentos++
     }
     else if(intentos == 2)
     {
+        dibujarTronco()
         console.log("TRONCO")
         intentos++
 
     }
     else if(intentos == 3)
     {
+        dibujarPiernaIzquierda()
         console.log("PIERNA IZQUIERDA")
         intentos++
 
     }
     else if(intentos == 4)
     {
+        dibujarPiernaDerecha()
         console.log("PIERNA DERECHA")
         intentos++
 
     }
     else if(intentos == 5)
     {
+        dibujarBrazoIzquierdo()
         console.log("BRAZO IZQUIERDO")
         intentos++
 
     }
     else
     {
+        dibujarBrazoDerecho()
+        dibujarFinDelJuego()
         console.log("BRAZO DERECHO")
-        alert("PERDISTE")
     }
+
 }
 
 //DIBUJAR LA HORCA
@@ -207,8 +213,8 @@ function dibujarHorca()
 
     //linea horizontal
     ctx.beginPath();
-    ctx.moveTo(100, -10);
-    ctx.lineTo(0, 100);
+    ctx.moveTo(0, 2);
+    ctx.lineTo(50, 2);
     ctx.stroke();
 
     //linea para abajo
@@ -220,10 +226,76 @@ function dibujarHorca()
 }
 
 //DIBUJAR LA CABEZA
+function dibujarCabeza(){
+
+    ctx.beginPath();
+    ctx.arc(50, 40, 10, 0, Math.PI * 2, true);
+    ctx.stroke();
+
+}
+
 //DIBUJAR TRONCO
+function dibujarTronco(){
+
+    ctx.beginPath();
+    ctx.moveTo(50, 50);
+    ctx.lineTo(50, 80);
+    ctx.stroke();
+
+}
+
 //DIBUJAR LA PIERNA IZQUIERDA
+function dibujarPiernaIzquierda(){
+
+    ctx.beginPath();
+    ctx.moveTo(50, 78);
+    ctx.lineTo(40, 93);
+    ctx.stroke();
+
+}
+
 //DIBUJAR LA PIERNA DERECHA
+function dibujarPiernaDerecha(){
+
+    ctx.beginPath();
+    ctx.moveTo(50, 78);
+    ctx.lineTo(60, 93);
+    ctx.stroke();
+
+}
+
 //DIBUJAR EL BRAZO IZQUIERDO
+function dibujarBrazoIzquierdo(){
+
+    ctx.beginPath();
+    ctx.moveTo(50, 60);
+    ctx.lineTo(40, 70);
+    ctx.stroke();
+
+}
+
 //DIBUJAR EL BRAZO DERECHO
+function dibujarBrazoDerecho(){
 
+    ctx.beginPath();
+    ctx.moveTo(50, 60);
+    ctx.lineTo(60, 70);
+    ctx.stroke();
 
+}
+
+//FUNCION: DIBUJAR FIN DEL JUEGO
+function dibujarFinDelJuego(){
+
+    ctx.font="10pt Verdana";
+    ctx.fillStyle = "white";
+    ctx.fillText("FIN DEL JUEGO",-105,50);
+    ctx.fillText("PERDISTE",-105,70);
+
+}
+
+//FUNCION: VERIFICAR GANADOR
+
+//FUNCION: DIBUJAR MENSAJE "GANASTE, FELICIDADES"
+
+//FUNCION: AGREGAR PALABRA
