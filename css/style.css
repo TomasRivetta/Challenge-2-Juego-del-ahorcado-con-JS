@@ -74,25 +74,6 @@ header{
     font-family: 'Prompt', sans-serif;
 }
 
-/* ESTILOS DE EL HTML JUEGO */
-
-#micanvas{
-    position: absolute;
-    width: 800px;
-    height: 400px;
-    left: 20%;
-    background-color: black;
-}
-
-.mostrarLetrasGuiones{
-    top: 400px;
-    left: 20%;
-    width: 800px;
-    height: 100px;
-    position: absolute;
-    background-color: blue;
-}
-
 .boton-nuevoJuego{
     width: 20%;
     height: 20%;
@@ -151,5 +132,78 @@ header{
 }
 
 .boton-nuevoJuego:hover, .boton-Rendirse:hover, .boton-agregarPalabra:hover{
+    color: white;
+}
+
+
+/* ESTILOS DE EL HTML JUEGO */
+
+#micanvas{
+    position: absolute;
+    width: 800px;
+    height: 400px;
+    left: 20%;
+    background-color: black;
+}
+
+#textoInput{
+    display: none;
+}
+
+#boton-confirmarPalabraNueva{
+    display: none;
+}
+
+#boton-cancelarPalabraNueva{
+    display: none;
+}
+
+#textoInput{
+    position: absolute;
+    background-color: #67e499;
+    border: 2px solid green;
+    border-radius: 10px;
+    margin: 50px 0 0 300px;
+}
+
+#boton-confirmarPalabraNueva{
+    width: 20%;
+    height: 20%;
+    margin-top: 32%;
+    left: 10%;
+    position: absolute;
+
+    background: #67e499;
+    border: 3px solid black; 
+    border-radius: 20px;
+    padding: 25px;
+
+    font-family: 'Prompt', sans-serif;
+    font-size: 15px;
+
+    line-height: 20%;
+    cursor: pointer;
+}
+
+#boton-cancelarPalabraNueva{
+    width: 20%;
+    height: 20%;
+    margin-top: 32%;
+    left: 38%;
+    position: absolute;
+
+    background: #67e499;
+    border: 3px solid black; 
+    border-radius: 20px;
+    padding: 25px;
+
+    font-family: 'Prompt', sans-serif;
+    font-size: 15px;
+
+    line-height: 20%;
+    cursor: pointer;
+}
+
+#boton-confirmarPalabraNueva:hover, #boton-cancelarPalabraNueva:hover{
     color: white;
 }

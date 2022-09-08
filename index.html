@@ -24,35 +24,36 @@
     </header>
     <main>
 
+        <!--PARTE 1-->
         <div>
 
             <button class="botonIniciar" id="boton-iniciar" onclick="ocultar(),mostrar(),crearPalabraSecreta();">Iniciar Juego</button>
-            <button class="botonAgregar" id="boton-agregar">Agregar nueva palabra</button>
+            <button class="botonAgregar" id="boton-agregar" onclick="mostrarAgregarPalabra()">Agregar nueva palabra</button>
 
         </div>
 
+        <!--PARTE 2-->
         <div id="mostrarJuego">
             <div>
                 <canvas id="micanvas">
-
-                    <div class="mostrarLetrasGuiones">
-
-                        <div class="mostrarguiones">
-                        </div>
-            
-                        <div class="mostrarLetrasUsadas">
-                        </div>
-
-                    </div>
-
                 </canvas>
             </div>
 
             <div>
-                <button class="boton-nuevoJuego" onclick="crearPalabraSecreta()">Nuevo Juego</button>
-                <button class="boton-Rendirse">Rendirse</button>
-                <button class="boton-agregarPalabra">Agregar Palabra</button>
+                <button class="boton-nuevoJuego" id="boton-nuevoJuego" onclick="crearPalabraSecreta()">Nuevo Juego</button>
+                <button class="boton-Rendirse" id="boton-rendirse" onclick="rendirse()">Rendirse</button>
+                <button class="boton-agregarPalabra" onclick="mostrarAgregarPalabra()">Agregar Palabra</button>
             </div>
+        </div>
+
+        <!--PARTE 3-->
+        <div id="ingresoTexto">
+    
+            <textarea id="textoInput" class="texto-ingresado" placeholder="Ingrese el texto" name="textarea" rows="20" cols="93"></textarea>
+            
+            <button id="boton-confirmarPalabraNueva">Agregar palabra</button>
+            <button id="boton-cancelarPalabraNueva" onclick="cancelar()">Cancelar</button>
+
         </div>
         
     </main>

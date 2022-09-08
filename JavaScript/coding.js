@@ -1,9 +1,10 @@
 //FUNCION OCULTAR Y MOSTRAR
 
-
-
 function mostrar(){
     document.getElementById("mostrarJuego").style.display = "block";
+    document.getElementById("boton-nuevoJuego").style.display = "block";
+    document.getElementById("boton-rendirse").style.display = "block";
+
 }
 
 function ocultar(){
@@ -28,13 +29,19 @@ function crearPalabraSecreta(){
     //LLAMANDO A FUNCION PARA CREAR LOS GUIONES
     guionesPalabra(palabraAleatoria)
 
-
-
     //MUESTRA EN CONSOLA PRUEBA
     console.log(palabraAleatoria)
 
     //reinicio de intentos para dibujarelAHORACADO
     intentos = 0
+
+    //reinicio el contador  para que se reinice el verificador de si gano o no
+    contador = 0 
+
+    //llamo a lafuncion rendirse para que muestre que  palabra era
+    prueba = 0
+    rendirse(prueba)
+    prueba++
 
     return palabraAleatoria
 
@@ -110,6 +117,7 @@ function dibujarLetra(teclaPresionada){
             ctx.fillStyle = "white";
             ctx.fillText(tecla,-96.3,120);
             movimiento++
+            verificarGanador(palabra)
             return
         }
     }
@@ -142,22 +150,27 @@ function dibujarLetraIncorrecta(teclaPresionada){
 //FUNCION: DIBUJAR HORCA
 let intentos = 0
 function dibujar(){
-
+    let palabra = palabraAleatoria
     if(intentos == 0)
     {
+
         //DIBUJAR LA HORCA
         dibujarHorca()
         console.log("HORCA")
         intentos++
+
     }
     else if(intentos == 1)
     {
+
         dibujarCabeza()
         console.log("CABEZA")
         intentos++
+
     }
     else if(intentos == 2)
     {
+
         dibujarTronco()
         console.log("TRONCO")
         intentos++
@@ -165,6 +178,7 @@ function dibujar(){
     }
     else if(intentos == 3)
     {
+
         dibujarPiernaIzquierda()
         console.log("PIERNA IZQUIERDA")
         intentos++
@@ -172,6 +186,7 @@ function dibujar(){
     }
     else if(intentos == 4)
     {
+
         dibujarPiernaDerecha()
         console.log("PIERNA DERECHA")
         intentos++
@@ -179,6 +194,7 @@ function dibujar(){
     }
     else if(intentos == 5)
     {
+
         dibujarBrazoIzquierdo()
         console.log("BRAZO IZQUIERDO")
         intentos++
@@ -186,8 +202,14 @@ function dibujar(){
     }
     else
     {
+
         dibujarBrazoDerecho()
         dibujarFinDelJuego()
+
+        //PRINTEA EL MENSAJE DE QUE PALABRA ERA
+        ctx.font="10pt Verdana";
+        ctx.fillStyle = "white";
+        ctx.fillText("La palabra era: " + palabra,-25,145,);
         console.log("BRAZO DERECHO")
     }
 
@@ -295,7 +317,71 @@ function dibujarFinDelJuego(){
 }
 
 //FUNCION: VERIFICAR GANADOR
+let contador = 0
+function verificarGanador(palabra){
+
+    palabraSecreta = palabra
+    contador++
+    if(contador == palabraSecreta.length)
+    {
+        console.log("ganaste")
+        dibujarMensajeGanaste()
+    }
+
+}
 
 //FUNCION: DIBUJAR MENSAJE "GANASTE, FELICIDADES"
+function dibujarMensajeGanaste(){
+
+    ctx.font="10pt Verdana";
+    ctx.fillStyle = "white";
+    ctx.fillText("GANASTE FELICIDADES",-105,50);
+
+}
+
+//FUNCION: RENDIRSE
+function rendirse(prueba){
+
+    let intento = prueba
+    let palabra = palabraAleatoria
+    if(intento == 0)
+    {
+        return
+    }
+    dibujarFinDelJuego()
+    ctx.font="10pt Verdana";
+    ctx.fillStyle = "white";
+    ctx.fillText("La palabra era: " + palabra,-25,145,);
+
+}
+
+//PARTE 3
+
+function mostrarAgregarPalabra(){
+
+    ocultar();
+    document.getElementById("mostrarJuego").style.display = "none";
+    document.getElementById("boton-nuevoJuego").style.display = "none";
+    document.getElementById("boton-rendirse").style.display = "none";
+
+    document.getElementById("textoInput").style.display = "block";
+    document.getElementById("boton-confirmarPalabraNueva").style.display = "block";
+    document.getElementById("boton-cancelarPalabraNueva").style.display = "block";
+
+}
+
 
 //FUNCION: AGREGAR PALABRA
+function agregarPalabra(){
+
+}
+
+function cancelar(){
+
+    document.getElementById("boton-iniciar").style.display = "block"
+    document.getElementById("boton-agregar").style.display = "block"
+    document.getElementById("textoInput").style.display="none";
+    document.getElementById("boton-confirmarPalabraNueva").style.display = "none";
+    document.getElementById("boton-cancelarPalabraNueva").style.display = "none";
+
+}
