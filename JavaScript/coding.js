@@ -69,14 +69,14 @@ var canvas = document.getElementById("micanvas");
 var ctx = canvas.getContext("2d");
 
 function guionesPalabra(palabraAleatoria){
+    
     ctx.save()
     guiones = palabraAleatoria.length
     movimiento = 200 / palabraAleatoria.length
     for(i = 0; i < guiones; i++){
-
         ctx.translate(movimiento, 0);
-        ctx.lineWidth =5;
-        ctx.strokeStyle = "#f00";
+        ctx.lineWidth =10;
+        ctx.strokeStyle = "#0A3871";
         ctx.beginPath();
         ctx.moveTo(10 , 125);
         ctx.lineTo(30 , 125);
@@ -118,12 +118,18 @@ function dibujarLetra(teclaPresionada){
     let palabra = palabraAleatoria
     let tecla = teclaPresionada;
     console.log(tecla)
-    let movimiento = (200 / palabraAleatoria.length)
 
+    spans = document.querySelectorAll("#spanLetras")
+
+    let movimiento = (200 / palabraAleatoria.length)
     for(i = 0; i < palabra.length; i++)
     {
         if(tecla == palabra[i])
         {
+
+            spans[i].innerHTML = tecla;
+
+
             ctx.translate(movimiento, 0);
             ctx.font="30pt SMW Text NC";
             ctx.fillStyle = "white";
@@ -138,11 +144,6 @@ function dibujarLetra(teclaPresionada){
 
 
     console.log(tecla)
-    //MUESTRA LA PALABRA ELEGIDA PARA PRUEBA
-    //ctx.font="10pt Verdana";
-    //ctx.fillStyle = "white";
-    //ctx.fillText(palabra,-25,145,);
-    
 }
 
 var canvas2 = document.getElementById("mostrarPalabrasUsadas");
@@ -239,7 +240,7 @@ var ctx3 = canvas3.getContext("2d");
 function dibujarHorca()
 {
     ctx3.lineWidth = 3;
-    ctx3.strokeStyle = "#FF0000";
+    ctx3.strokeStyle = "#0A3871";
 
     //linea horizontal
     ctx3.beginPath();
@@ -419,3 +420,11 @@ function cancelar(){
     document.getElementById("boton-cancelarPalabraNueva").style.display = "none";
 
 }
+
+
+//Musica de fondo
+/*function mute() {
+    var aud = document.getElementById("music");
+    if (aud.muted == false) {aud.muted = true}
+    else {aud.muted = false}
+}*/

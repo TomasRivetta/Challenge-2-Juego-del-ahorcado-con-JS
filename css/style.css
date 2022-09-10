@@ -32,7 +32,7 @@ header{
     position: absolute;
 
     background: #67e499;
-    border: 3px solid black; 
+    border: 3px solid #0A3871; 
     border-radius: 20px;
     padding: 40px;
 
@@ -52,7 +52,7 @@ header{
     position: absolute;
 
     background: #67e499;
-    border: 3px solid black; 
+    border: 3px solid #0A3871; 
     border-radius: 20px;
     padding: 40px;
 
@@ -88,7 +88,7 @@ header{
     position: absolute;
 
     background: #67e499;
-    border: 3px solid black; 
+    border: 3px solid #0A3871; 
     border-radius: 20px;
     padding: 25px;
 
@@ -108,7 +108,7 @@ header{
     position: absolute;
 
     background: #67e499;
-    border: 3px solid black; 
+    border: 3px solid #0A3871; 
     border-radius: 20px;
     padding: 25px;
 
@@ -128,7 +128,7 @@ header{
     position: absolute;
 
     background: #67e499;
-    border: 3px solid black; 
+    border: 3px solid #0A3871; 
     border-radius: 20px;
     padding: 25px;
 
@@ -153,7 +153,6 @@ header{
     width: 800px;
     height: 53px;
     left: 20%;
-    background-color: black;
 }
 
 #mostrarPalabrasUsadas{
@@ -163,7 +162,6 @@ header{
     width: 800px;
     height: 100px;
     left: 20%;
-    background-color: blueviolet;
 
 }
 
@@ -173,7 +171,6 @@ header{
     width: 800px;
     height: 264px;
     left: 20%;
-    background-color: blue;
 }
 
 #textoInput{
@@ -191,8 +188,8 @@ header{
 #textoInput{
     position: absolute;
     height: 300px;
-    background-color: #67e499;
-    border: 2px solid green;
+    background-color: #0A3871;
+    border: 2px solid rgb(7, 7, 7);
     border-radius: 10px;
     margin: 50px 0 0 300px;
     font-size: 15px;
@@ -224,7 +221,7 @@ header{
     position: absolute;
 
     background: #67e499;
-    border: 3px solid black; 
+    border: 3px solid #0A3871; 
     border-radius: 20px;
     padding: 25px;
 
@@ -244,7 +241,7 @@ header{
     position: absolute;
 
     background: #67e499;
-    border: 3px solid black; 
+    border: 3px solid #0A3871; 
     border-radius: 20px;
     padding: 25px;
 
@@ -258,4 +255,10 @@ header{
 
 #boton-confirmarPalabraNueva:hover, #boton-cancelarPalabraNueva:hover{
     color: white;
+}
+
+#botonMusica{
+    position: absolute;
+    margin-top: 35%;
+    margin-left: 90%;
 }
