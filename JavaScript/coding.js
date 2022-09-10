@@ -17,7 +17,18 @@ function ocultar(){
 
 //FUNCION: CREAR PALABRA SECRETA
 
-const palabras = ["HTML", "CSS", "PYTHON", "SQL" , "REDUX" , "REACTJS" , "NODEJS" , "MYSQL" , "JAVA" , "ALURA" , "ORACLE"]
+const palabras = ["HTML", 
+    /*"CSS" , 
+    "PYTHON" , 
+    "SQL" , 
+    "REDUX" , 
+    "REACTJS" , 
+    "NODEJS" , 
+    "MYSQL" , 
+    "JAVA" , 
+    "ALURA" , 
+    "ORACLE" ,
+    "ONE"*/]
 
 function crearPalabraSecreta(){
     palabraAleatoria = palabras[Math.floor(Math.random() * palabras.length)]
@@ -25,6 +36,10 @@ function crearPalabraSecreta(){
 
     //LLAMADO A LA TABLA VACIA
     ctx.reset()
+
+    ctx2.reset()
+
+    ctx3.reset()
 
     //LLAMANDO A FUNCION PARA CREAR LOS GUIONES
     guionesPalabra(palabraAleatoria)
@@ -53,24 +68,23 @@ function crearPalabraSecreta(){
 var canvas = document.getElementById("micanvas");
 var ctx = canvas.getContext("2d");
 
-
 function guionesPalabra(palabraAleatoria){
     ctx.save()
     guiones = palabraAleatoria.length
-    movimiento = 13 * 2
+    movimiento = 200 / palabraAleatoria.length
     for(i = 0; i < guiones; i++){
 
         ctx.translate(movimiento, 0);
-        ctx.lineWidth = 1;
+        ctx.lineWidth =5;
         ctx.strokeStyle = "#f00";
         ctx.beginPath();
-        ctx.moveTo(10, 125);
-        ctx.lineTo(30, 125);
+        ctx.moveTo(10 , 125);
+        ctx.lineTo(30 , 125);
         ctx.stroke();
         movimiento++
     }
     //MUESTRA EN CONSOLA PRUEBA
-    //console.log(guiones)
+    console.log(guiones)
 }
 
 
@@ -83,39 +97,37 @@ function guionesPalabra(palabraAleatoria){
 document.addEventListener("keydown",verificacion)
 
 function verificacion(event){
-    const teclaPresionada = event.key
+    const teclaPresionada = event.key.toUpperCase()
 
-    key = event.KeyCode || event.which;
-    tecla = String.fromCharCode(key).toString();
-    letrasAceptadas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    if (letrasAceptadas.indexOf(tecla) == -1){
-        alert("ACTIVE EL BLOQ MAYUS");
+    if (teclaPresionada.match(/^[A-ZÑ]$/i)){
+        dibujarLetra(teclaPresionada)
     }
     else
     {
-        dibujarLetra(teclaPresionada)
+        alert("SOLO SE ACEPTAN LETRAS MAYUSCULAS");
     }
 
 }
 
 //FUNCION: DIBUJAR LETRA CORRECTA
 
+//const palabraConGuiones = palabraAleatoria.replace(/./g, "_ ");
 
 function dibujarLetra(teclaPresionada){
 
     let palabra = palabraAleatoria
     let tecla = teclaPresionada;
     console.log(tecla)
+    let movimiento = (200 / palabraAleatoria.length)
 
-    let movimiento = 13 * 2
     for(i = 0; i < palabra.length; i++)
     {
         if(tecla == palabra[i])
         {
             ctx.translate(movimiento, 0);
-            ctx.font="10pt Verdana";
+            ctx.font="30pt SMW Text NC";
             ctx.fillStyle = "white";
-            ctx.fillText(tecla,-96.3,120);
+            ctx.fillText(tecla,-200,100);
             movimiento++
             verificarGanador(palabra)
             return
@@ -133,15 +145,20 @@ function dibujarLetra(teclaPresionada){
     
 }
 
+var canvas2 = document.getElementById("mostrarPalabrasUsadas");
+var ctx2 = canvas2.getContext("2d");
+
 //FUNCION: DIBUJAR LETRA INCORRECTA
 
+let movimiento = 20
 function dibujarLetraIncorrecta(teclaPresionada){
+    ctx2.save()
     let tecla = teclaPresionada
-
-    ctx.font="10pt Verdana";
-    ctx.fillStyle = "white";
-    ctx.fillText(tecla,0,145);
-
+    ctx2.font="30pt SMW Text NC";
+    ctx2.fillStyle = "white";
+    ctx2.fillText(tecla,movimiento,90);
+    movimiento+=30;
+    console.log(movimiento)
     dibujar()
 
 }
@@ -207,13 +224,16 @@ function dibujar(){
         dibujarFinDelJuego()
 
         //PRINTEA EL MENSAJE DE QUE PALABRA ERA
-        ctx.font="10pt Verdana";
-        ctx.fillStyle = "white";
-        ctx.fillText("La palabra era: " + palabra,-25,145,);
+        ctx3.font="10pt Verdana";
+        ctx3.fillStyle = "white";
+        ctx3.fillText("La palabra era: " + palabra,75,145,);
         console.log("BRAZO DERECHO")
     }
 
 }
+
+var canvas3 = document.getElementById("miAhorcado");
+var ctx3 = canvas3.getContext("2d");
 
 //DIBUJAR LA HORCA
 function dibujarHorca()
@@ -309,10 +329,10 @@ function dibujarBrazoDerecho(){
 //FUNCION: DIBUJAR FIN DEL JUEGO
 function dibujarFinDelJuego(){
 
-    ctx.font="10pt Verdana";
-    ctx.fillStyle = "white";
-    ctx.fillText("FIN DEL JUEGO",-105,50);
-    ctx.fillText("PERDISTE",-105,70);
+    ctx3.font="10pt SMW Text NC";
+    ctx3.fillStyle = "white";
+    ctx3.fillText("FIN DEL JUEGO",75,80);
+    ctx3.fillText("PERDISTE",75,60);
 
 }
 
@@ -333,9 +353,9 @@ function verificarGanador(palabra){
 //FUNCION: DIBUJAR MENSAJE "GANASTE, FELICIDADES"
 function dibujarMensajeGanaste(){
 
-    ctx.font="10pt Verdana";
-    ctx.fillStyle = "white";
-    ctx.fillText("GANASTE FELICIDADES",-105,50);
+    ctx3.font="10pt SMW Text NC";
+    ctx3.fillStyle = "white";
+    ctx3.fillText("GANASTE FELICIDADES",100,80);
 
 }
 
@@ -349,10 +369,10 @@ function rendirse(prueba){
         return
     }
     dibujarFinDelJuego()
-    ctx.font="10pt Verdana";
-    ctx.fillStyle = "white";
-    ctx.fillText("La palabra era: " + palabra,-25,145,);
-
+    ctx3.font="10pt SMW Text NC";
+    ctx3.fillStyle = "white";
+    ctx3.fillText("La palabra era: " + palabra,70,145,);
+    breack;
 }
 
 //PARTE 3
@@ -365,6 +385,7 @@ function mostrarAgregarPalabra(){
     document.getElementById("boton-rendirse").style.display = "none";
 
     document.getElementById("textoInput").style.display = "block";
+    document.getElementById("advertencia").style.display = "block";
     document.getElementById("boton-confirmarPalabraNueva").style.display = "block";
     document.getElementById("boton-cancelarPalabraNueva").style.display = "block";
 
@@ -376,9 +397,16 @@ function agregarPalabra(){
 
     let textoUsuario = document.getElementById("textoInput").value
     textoUsuario.toUpperCase()
-    palabras.push(textoUsuario)
-    alert("SE AGREGO LA PALABRA CON EXITO")
-    cancelar()
+    if(textoUsuario <= 8)
+    {
+        palabras.push(textoUsuario)
+        alert("SE AGREGO LA PALABRA CON EXITO")
+        cancelar()
+    }
+    else
+    {
+        alert("NO SE PUEDE AGREGAR LA PALABRA PORQUE SUPERA LOS 8 CARACTERES ADEMAS LAS PALABRAS VAN SIN ACENTOS Y CARACTERES ESPECIALES")
+    }
 }
 
 function cancelar(){
