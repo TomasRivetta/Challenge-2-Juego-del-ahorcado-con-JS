@@ -1,3 +1,6 @@
+@import url('http://fonts.cdnfonts.com/css/smw-text-nc');
+
+
 body{
     background: #98FB98;
     width: auto;
@@ -33,7 +36,8 @@ header{
     border-radius: 20px;
     padding: 40px;
 
-    font-family: 'Prompt', sans-serif;
+    font-family: 'SMW Text NC', sans-serif;
+    font-family: 'SMW Text 2 NC', sans-serif;
     font-size: 15px;
     line-height: 20%;
     
@@ -52,7 +56,9 @@ header{
     border-radius: 20px;
     padding: 40px;
 
-    font-family: 'Prompt', sans-serif;
+    font-family: 'SMW Text NC', sans-serif;
+    font-family: 'SMW Text 2 NC', sans-serif;
+
     font-size: 15px;
 
     line-height: 20%;
@@ -61,17 +67,17 @@ header{
 
 .botonIniciar:hover, .botonAgregar:hover{
     color: white;
-    font-size: 20px;
-    transition-duration: 0.5s;
 }
 
 .footer{
     margin-top: 38%;
+    padding: 1% 0 0 0;
     position: absolute;
     width: 100%;
-    height: 40px;
+    height: 51%;
     text-align: center;
-    font-family: 'Prompt', sans-serif;
+    font-family: 'SMW Text NC', sans-serif;
+    font-family: 'SMW Text 2 NC', sans-serif;
 }
 
 .boton-nuevoJuego{
@@ -86,7 +92,8 @@ header{
     border-radius: 20px;
     padding: 25px;
 
-    font-family: 'Prompt', sans-serif;
+    font-family: 'SMW Text NC', sans-serif;
+    font-family: 'SMW Text 2 NC', sans-serif;
     font-size: 15px;
 
     line-height: 20%;
@@ -105,7 +112,8 @@ header{
     border-radius: 20px;
     padding: 25px;
 
-    font-family: 'Prompt', sans-serif;
+    font-family: 'SMW Text NC', sans-serif;
+    font-family: 'SMW Text 2 NC', sans-serif;
     font-size: 15px;
 
     line-height: 20%;
@@ -124,7 +132,8 @@ header{
     border-radius: 20px;
     padding: 25px;
 
-    font-family: 'Prompt', sans-serif;
+    font-family: 'SMW Text NC', sans-serif;
+    font-family: 'SMW Text 2 NC', sans-serif;
     font-size: 15px;
 
     line-height: 20%;
@@ -139,11 +148,32 @@ header{
 /* ESTILOS DE EL HTML JUEGO */
 
 #micanvas{
+    margin-top: 20%;
     position: absolute;
     width: 800px;
-    height: 400px;
+    height: 53px;
     left: 20%;
     background-color: black;
+}
+
+#mostrarPalabrasUsadas{
+
+    margin-top: 24%;
+    position: absolute;
+    width: 800px;
+    height: 100px;
+    left: 20%;
+    background-color: blueviolet;
+
+}
+
+#miAhorcado{
+
+    position: absolute;
+    width: 800px;
+    height: 264px;
+    left: 20%;
+    background-color: blue;
 }
 
 #textoInput{
@@ -160,17 +190,37 @@ header{
 
 #textoInput{
     position: absolute;
+    height: 300px;
     background-color: #67e499;
     border: 2px solid green;
     border-radius: 10px;
     margin: 50px 0 0 300px;
+    font-size: 15px;
+    width: 54%;
+    font-family: 'SMW Text NC', sans-serif;
+    font-family: 'SMW Text 2 NC', sans-serif;
+}
+
+#advertencia{
+    display: none;
+}
+
+#advertencia{
+
+    color: black;
+    position: absolute;
+    margin-top: 29%;
+    margin-left: 25%;
+    font-family: 'SMW Text NC', sans-serif;
+    font-family: 'SMW Text 2 NC', sans-serif;
+
 }
 
 #boton-confirmarPalabraNueva{
     width: 20%;
     height: 20%;
     margin-top: 32%;
-    left: 10%;
+    left: 24%;
     position: absolute;
 
     background: #67e499;
@@ -178,7 +228,8 @@ header{
     border-radius: 20px;
     padding: 25px;
 
-    font-family: 'Prompt', sans-serif;
+    font-family: 'SMW Text NC', sans-serif;
+    font-family: 'SMW Text 2 NC', sans-serif;
     font-size: 15px;
 
     line-height: 20%;
@@ -189,7 +240,7 @@ header{
     width: 20%;
     height: 20%;
     margin-top: 32%;
-    left: 38%;
+    left: 56%;
     position: absolute;
 
     background: #67e499;
@@ -197,7 +248,8 @@ header{
     border-radius: 20px;
     padding: 25px;
 
-    font-family: 'Prompt', sans-serif;
+    font-family: 'SMW Text NC', sans-serif;
+    font-family: 'SMW Text 2 NC', sans-serif;
     font-size: 15px;
 
     line-height: 20%;

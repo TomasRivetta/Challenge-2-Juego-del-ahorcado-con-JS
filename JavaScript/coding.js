@@ -238,91 +238,91 @@ var ctx3 = canvas3.getContext("2d");
 //DIBUJAR LA HORCA
 function dibujarHorca()
 {
-    ctx.lineWidth = 3;
-    ctx.strokeStyle = "#FF0000";
+    ctx3.lineWidth = 3;
+    ctx3.strokeStyle = "#FF0000";
 
     //linea horizontal
-    ctx.beginPath();
-    ctx.moveTo(-80, 100);
-    ctx.lineTo(100, 100);
-    ctx.stroke();
+    ctx3.beginPath();
+    ctx3.moveTo(-80, 100);
+    ctx3.lineTo(100, 100);
+    ctx3.stroke();
     
     //linea vertical
-    ctx.beginPath();
-    ctx.moveTo(0, 0);
-    ctx.lineTo(0, 100);
-    ctx.stroke();
+    ctx3.beginPath();
+    ctx3.moveTo(0, 0);
+    ctx3.lineTo(0, 100);
+    ctx3.stroke();
 
     //linea horizontal
-    ctx.beginPath();
-    ctx.moveTo(0, 2);
-    ctx.lineTo(50, 2);
-    ctx.stroke();
+    ctx3.beginPath();
+    ctx3.moveTo(0, 2);
+    ctx3.lineTo(50, 2);
+    ctx3.stroke();
 
     //linea para abajo
-    ctx.beginPath();
-    ctx.moveTo(50, -80);
-    ctx.lineTo(50, 30);
-    ctx.stroke();
+    ctx3.beginPath();
+    ctx3.moveTo(50, -80);
+    ctx3.lineTo(50, 30);
+    ctx3.stroke();
 
 }
 
 //DIBUJAR LA CABEZA
 function dibujarCabeza(){
 
-    ctx.beginPath();
-    ctx.arc(50, 40, 10, 0, Math.PI * 2, true);
-    ctx.stroke();
+    ctx3.beginPath();
+    ctx3.arc(50, 40, 10, 0, Math.PI * 2, true);
+    ctx3.stroke();
 
 }
 
 //DIBUJAR TRONCO
 function dibujarTronco(){
 
-    ctx.beginPath();
-    ctx.moveTo(50, 50);
-    ctx.lineTo(50, 80);
-    ctx.stroke();
+    ctx3.beginPath();
+    ctx3.moveTo(50, 50);
+    ctx3.lineTo(50, 80);
+    ctx3.stroke();
 
 }
 
 //DIBUJAR LA PIERNA IZQUIERDA
 function dibujarPiernaIzquierda(){
 
-    ctx.beginPath();
-    ctx.moveTo(50, 78);
-    ctx.lineTo(40, 93);
-    ctx.stroke();
+    ctx3.beginPath();
+    ctx3.moveTo(50, 78);
+    ctx3.lineTo(40, 93);
+    ctx3.stroke();
 
 }
 
 //DIBUJAR LA PIERNA DERECHA
 function dibujarPiernaDerecha(){
 
-    ctx.beginPath();
-    ctx.moveTo(50, 78);
-    ctx.lineTo(60, 93);
-    ctx.stroke();
+    ctx3.beginPath();
+    ctx3.moveTo(50, 78);
+    ctx3.lineTo(60, 93);
+    ctx3.stroke();
 
 }
 
 //DIBUJAR EL BRAZO IZQUIERDO
 function dibujarBrazoIzquierdo(){
 
-    ctx.beginPath();
-    ctx.moveTo(50, 60);
-    ctx.lineTo(40, 70);
-    ctx.stroke();
+    ctx3.beginPath();
+    ctx3.moveTo(50, 60);
+    ctx3.lineTo(40, 70);
+    ctx3.stroke();
 
 }
 
 //DIBUJAR EL BRAZO DERECHO
 function dibujarBrazoDerecho(){
 
-    ctx.beginPath();
-    ctx.moveTo(50, 60);
-    ctx.lineTo(60, 70);
-    ctx.stroke();
+    ctx3.beginPath();
+    ctx3.moveTo(50, 60);
+    ctx3.lineTo(60, 70);
+    ctx3.stroke();
 
 }
 
@@ -414,6 +414,7 @@ function cancelar(){
     document.getElementById("boton-iniciar").style.display = "block"
     document.getElementById("boton-agregar").style.display = "block"
     document.getElementById("textoInput").style.display="none";
+    document.getElementById("advertencia").style.display = "none";
     document.getElementById("boton-confirmarPalabraNueva").style.display = "none";
     document.getElementById("boton-cancelarPalabraNueva").style.display = "none";
 
