@@ -37,6 +37,13 @@
             <div>
                 <canvas id="micanvas">
                 </canvas>
+
+                <canvas id="miAhorcado">
+                </canvas>
+
+                <canvas id="mostrarPalabrasUsadas">
+                </canvas>
+
             </div>
 
             <div>
@@ -50,6 +57,8 @@
         <div id="ingresoTexto">
     
             <textarea id="textoInput" class="texto-ingresado" placeholder="Ingrese el texto" name="textarea" rows="20" cols="93"></textarea>
+            
+            <p id="advertencia">&#9888; Maximo 8 caracteres, sin acentos y caracteres especiales</p>
             
             <button id="boton-confirmarPalabraNueva" onclick="agregarPalabra()">Agregar palabra</button>
             <button id="boton-cancelarPalabraNueva" onclick="cancelar()">Cancelar</button>
