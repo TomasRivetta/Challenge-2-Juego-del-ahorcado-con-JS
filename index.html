@@ -25,7 +25,7 @@
         <!--PARTE 1-->
         <div>
 
-            <button class="botonIniciar" id="boton-iniciar" onclick="ocultar(),mostrar(),crearPalabraSecreta();">Iniciar Juego</button>
+            <button class="botonIniciar" id="boton-iniciar" onclick="ocultar(),mostrar(),crearPalabraSecreta()">Iniciar Juego</button>
             <button class="botonAgregar" id="boton-agregar" onclick="mostrarAgregarPalabra()">Agregar nueva palabra</button>
 
         </div>
@@ -33,17 +33,20 @@
         <!--PARTE 2-->
         <div id="mostrarJuego">
             <div>
-                <canvas id="micanvas">
-                </canvas>
-
+                <!--DIBUJO DEL AHORCADO CON MENSAJE DE SI GANO O NO-->
                 <canvas id="miAhorcado">
                 </canvas>
 
+                <!--LETRAS CORRECTAS-->
+                <canvas id="micanvas">
+                </canvas>
+
+                <!--LETRAS INCORRECTAS-->
                 <canvas id="mostrarPalabrasUsadas">
                 </canvas>
 
             </div>
-
+            
             <div>
                 <button class="boton-nuevoJuego" id="boton-nuevoJuego" onclick="crearPalabraSecreta()">Nuevo Juego</button>
                 <button class="boton-Rendirse" id="boton-rendirse" onclick="rendirse()">Rendirse</button>

@@ -25,6 +25,7 @@ header{
 }
 
 .botonIniciar{
+
     width: 25%;
     height: 20%;
     margin-top: 13%;
@@ -151,17 +152,20 @@ header{
     margin-top: 20%;
     position: absolute;
     width: 800px;
-    height: 53px;
+    height: 74px;
     left: 20%;
+    background-color: black;
 }
 
 #mostrarPalabrasUsadas{
 
-    margin-top: 24%;
+    margin-top: 25%;
     position: absolute;
     width: 800px;
-    height: 100px;
+    height: 80px;
     left: 20%;
+    background-color: blue;
+
 
 }
 
@@ -169,8 +173,10 @@ header{
 
     position: absolute;
     width: 800px;
-    height: 264px;
+    height: 293px;
     left: 20%;
+
+    background-color: blue;
 }
 
 #textoInput{
@@ -262,3 +268,4 @@ header{
     margin-top: 35%;
     margin-left: 90%;
 }
+

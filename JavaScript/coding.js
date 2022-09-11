@@ -18,7 +18,7 @@ function ocultar(){
 //FUNCION: CREAR PALABRA SECRETA
 
 const palabras = ["HTML", 
-    /*"CSS" , 
+    "CSS" , 
     "PYTHON" , 
     "SQL" , 
     "REDUX" , 
@@ -28,11 +28,17 @@ const palabras = ["HTML",
     "JAVA" , 
     "ALURA" , 
     "ORACLE" ,
-    "ONE"*/]
+    "ONE",
+    "MOUSE",
+    "ANGULAR",
+    "SLACK",
+    "DISCORD",
+    "UNITY",
+    "CSHARP"
+]
 
 function crearPalabraSecreta(){
     palabraAleatoria = palabras[Math.floor(Math.random() * palabras.length)]
-
 
     //LLAMADO A LA TABLA VACIA
     ctx.reset()
@@ -62,7 +68,6 @@ function crearPalabraSecreta(){
 
 }
 
-
 //FUNCION: MOSTRAR GUIONES PARA NUESTRA PALABRA SECRETA
 
 var canvas = document.getElementById("micanvas");
@@ -71,6 +76,7 @@ var ctx = canvas.getContext("2d");
 function guionesPalabra(palabraAleatoria){
     
     ctx.save()
+    /*
     guiones = palabraAleatoria.length
     movimiento = 200 / palabraAleatoria.length
     for(i = 0; i < guiones; i++){
@@ -82,9 +88,19 @@ function guionesPalabra(palabraAleatoria){
         ctx.lineTo(30 , 125);
         ctx.stroke();
         movimiento++
+    }*/
+
+    for (var i = 0; i < palabraAleatoria.length; i++) {        
+        ctx.fillStyle = "#0A3871";
+        ctx.font = '35px SMW Text NC';
+        ctx.textAlign = 'center';
+        var ejeX = i*32 + (canvas.width - palabraAleatoria.length * 40) / 2 + 50;
+        var ejeY = (canvas.height - 10)
+        ctx.fillText('_', ejeX, ejeY);
     }
+
     //MUESTRA EN CONSOLA PRUEBA
-    console.log(guiones)
+    //console.log(guiones)
 }
 
 
@@ -118,26 +134,26 @@ function dibujarLetra(teclaPresionada){
     let palabra = palabraAleatoria
     let tecla = teclaPresionada;
     console.log(tecla)
+    //let arrayPalabra = palabra.split('')
+    //console.log(arrayPalabra)
 
-    spans = document.querySelectorAll("#spanLetras")
-
-    let movimiento = (200 / palabraAleatoria.length)
+    //let movimiento = (200 / palabraAleatoria.length)
     for(i = 0; i < palabra.length; i++)
     {
-        if(tecla == palabra[i])
-        {
-
-            spans[i].innerHTML = tecla;
-
-
-            ctx.translate(movimiento, 0);
-            ctx.font="30pt SMW Text NC";
-            ctx.fillStyle = "white";
-            ctx.fillText(tecla,-200,100);
-            movimiento++
-            verificarGanador(palabra)
-            return
-        }
+            if(tecla == palabra[i])
+            {
+                /*
+                ctx.translate(movimiento, 0);
+                ctx.font="30pt SMW Text NC";
+                ctx.fillStyle = "white";
+                ctx.fillText(tecla,-200,100);
+                */
+                dibujarLetraCorrecta(tecla,i,palabraAleatoria.length)
+                
+                verificarGanador(palabra)
+                return
+        
+            }
     }
 
     dibujarLetraIncorrecta(tecla)
@@ -145,6 +161,16 @@ function dibujarLetra(teclaPresionada){
 
     console.log(tecla)
 }
+
+function dibujarLetraCorrecta(letra, index, posicion) {
+    ctx.fillStyle = "white";
+    ctx.font = '35px SMW Text NC';
+    ctx.textAlign = 'center';
+    var ejeX = index*32 + (canvas.width - posicion * 40) / 2 + 50;
+    ctx.fillText(letra, ejeX, 120);
+}
+
+
 
 var canvas2 = document.getElementById("mostrarPalabrasUsadas");
 var ctx2 = canvas2.getContext("2d");
