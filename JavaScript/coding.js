@@ -64,6 +64,9 @@ function crearPalabraSecreta(){
     rendirse(prueba)
     prueba++
 
+    //Esto me sirve para que cuando de nuevo juego se reinicie a 50 la posicion de las palabras erradas
+    movimiento = 50
+
     return palabraAleatoria
 
 }
@@ -90,13 +93,14 @@ function guionesPalabra(palabraAleatoria){
         movimiento++
     }*/
 
-    for (var i = 0; i < palabraAleatoria.length; i++) {        
+    for (var i = 0; i < palabraAleatoria.length; i++) {
         ctx.fillStyle = "#0A3871";
-        ctx.font = '35px SMW Text NC';
+        ctx.font = '35px Roboto Mono';
         ctx.textAlign = 'center';
         var ejeX = i*32 + (canvas.width - palabraAleatoria.length * 40) / 2 + 50;
         var ejeY = (canvas.height - 10)
         ctx.fillText('_', ejeX, ejeY);
+
     }
 
     //MUESTRA EN CONSOLA PRUEBA
@@ -158,18 +162,15 @@ function dibujarLetra(teclaPresionada){
 
     dibujarLetraIncorrecta(tecla)
 
-
-    console.log(tecla)
 }
 
 function dibujarLetraCorrecta(letra, index, posicion) {
-    ctx.fillStyle = "white";
-    ctx.font = '35px SMW Text NC';
+    ctx.fillStyle = "#0A3871";
+    ctx.font = '35px Roboto Mono';
     ctx.textAlign = 'center';
     var ejeX = index*32 + (canvas.width - posicion * 40) / 2 + 50;
     ctx.fillText(letra, ejeX, 120);
 }
-
 
 
 var canvas2 = document.getElementById("mostrarPalabrasUsadas");
@@ -177,15 +178,15 @@ var ctx2 = canvas2.getContext("2d");
 
 //FUNCION: DIBUJAR LETRA INCORRECTA
 
-let movimiento = 20
 function dibujarLetraIncorrecta(teclaPresionada){
+
     ctx2.save()
-    let tecla = teclaPresionada
-    ctx2.font="30pt SMW Text NC";
-    ctx2.fillStyle = "white";
-    ctx2.fillText(tecla,movimiento,90);
+
+    ctx2.font="30pt Roboto Mono";
+    ctx2.fillStyle = "#0A3871";
+    ctx2.fillText(teclaPresionada,movimiento,80);
     movimiento+=30;
-    console.log(movimiento)
+
     dibujar()
 
 }
@@ -200,7 +201,6 @@ function dibujar(){
 
         //DIBUJAR LA HORCA
         dibujarHorca()
-        console.log("HORCA")
         intentos++
 
     }
@@ -208,7 +208,6 @@ function dibujar(){
     {
 
         dibujarCabeza()
-        console.log("CABEZA")
         intentos++
 
     }
@@ -216,7 +215,6 @@ function dibujar(){
     {
 
         dibujarTronco()
-        console.log("TRONCO")
         intentos++
 
     }
@@ -224,7 +222,6 @@ function dibujar(){
     {
 
         dibujarPiernaIzquierda()
-        console.log("PIERNA IZQUIERDA")
         intentos++
 
     }
@@ -232,7 +229,6 @@ function dibujar(){
     {
 
         dibujarPiernaDerecha()
-        console.log("PIERNA DERECHA")
         intentos++
 
     }
@@ -240,7 +236,6 @@ function dibujar(){
     {
 
         dibujarBrazoIzquierdo()
-        console.log("BRAZO IZQUIERDO")
         intentos++
 
     }
@@ -254,7 +249,7 @@ function dibujar(){
         ctx3.font="10pt Verdana";
         ctx3.fillStyle = "white";
         ctx3.fillText("La palabra era: " + palabra,75,145,);
-        console.log("BRAZO DERECHO")
+        
     }
 
 }
@@ -270,14 +265,14 @@ function dibujarHorca()
 
     //linea horizontal
     ctx3.beginPath();
-    ctx3.moveTo(-80, 100);
-    ctx3.lineTo(100, 100);
+    ctx3.moveTo(0,100);
+    ctx3.lineTo(150, 100);
     ctx3.stroke();
     
     //linea vertical
     ctx3.beginPath();
-    ctx3.moveTo(0, 0);
-    ctx3.lineTo(0, 100);
+    ctx3.moveTo(2, 2);
+    ctx3.lineTo(2, 100);
     ctx3.stroke();
 
     //linea horizontal
@@ -356,8 +351,8 @@ function dibujarBrazoDerecho(){
 //FUNCION: DIBUJAR FIN DEL JUEGO
 function dibujarFinDelJuego(){
 
-    ctx3.font="10pt SMW Text NC";
-    ctx3.fillStyle = "white";
+    ctx3.font="10pt Roboto Mono";
+    ctx3.fillStyle = "#0A3871";
     ctx3.fillText("FIN DEL JUEGO",75,80);
     ctx3.fillText("PERDISTE",75,60);
 
@@ -371,7 +366,6 @@ function verificarGanador(palabra){
     contador++
     if(contador == palabraSecreta.length)
     {
-        console.log("ganaste")
         dibujarMensajeGanaste()
     }
 
@@ -380,8 +374,8 @@ function verificarGanador(palabra){
 //FUNCION: DIBUJAR MENSAJE "GANASTE, FELICIDADES"
 function dibujarMensajeGanaste(){
 
-    ctx3.font="10pt SMW Text NC";
-    ctx3.fillStyle = "white";
+    ctx3.font="10pt Roboto Mono";
+    ctx3.fillStyle = "#0A3871";
     ctx3.fillText("GANASTE FELICIDADES",100,80);
 
 }
@@ -396,10 +390,17 @@ function rendirse(prueba){
         return
     }
     dibujarFinDelJuego()
-    ctx3.font="10pt SMW Text NC";
-    ctx3.fillStyle = "white";
+    ctx3.font="10pt Roboto Mono";
+    ctx3.fillStyle = "#0A3871";
     ctx3.fillText("La palabra era: " + palabra,70,145,);
-    breack;
+
+    dibujarHorca()
+    dibujarCabeza()
+    dibujarTronco()
+    dibujarPiernaIzquierda()
+    dibujarPiernaDerecha()
+    dibujarBrazoIzquierdo()
+    dibujarBrazoDerecho()
 }
 
 //PARTE 3
