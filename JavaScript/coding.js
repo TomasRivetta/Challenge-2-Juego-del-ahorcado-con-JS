@@ -246,8 +246,8 @@ function dibujar(){
         dibujarFinDelJuego()
 
         //PRINTEA EL MENSAJE DE QUE PALABRA ERA
-        ctx3.font="10pt Verdana";
-        ctx3.fillStyle = "white";
+        ctx3.font="10pt Roboto Mono";
+        ctx3.fillStyle = "#0A3871";
         ctx3.fillText("La palabra era: " + palabra,75,145,);
         
     }
