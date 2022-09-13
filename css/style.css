@@ -1,6 +1,6 @@
 
 body{
-    background-image: url("/image/fondo.png");
+    background-image: url("../image/fondo.png");
     width: auto;
     height: auto;
     position: relative;
@@ -65,6 +65,7 @@ header{
 
 .botonIniciar:hover, .botonAgregar:hover{
     color: #0A3871;
+    transform: scale(0.9);
 }
 
 footer{
@@ -136,6 +137,7 @@ footer{
 
 .boton-nuevoJuego:hover, .boton-Rendirse:hover, .boton-agregarPalabra:hover{
     color: #0A3871;
+    transform: scale(0.9);
 }
 
 
@@ -251,6 +253,7 @@ footer{
 
 #boton-confirmarPalabraNueva:hover, #boton-cancelarPalabraNueva:hover{
     color: #0A3871;
+    transform: scale(0.9);
 }
 
 #botonMusica{
