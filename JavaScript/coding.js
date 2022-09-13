@@ -8,7 +8,7 @@ function mostrar(){
 }
 
 function ocultar(){
-    //document.getElementById("mostrarJuego").style.display = "none"
+
     document.getElementById("boton-iniciar").style.display = "none"
     document.getElementById("boton-agregar").style.display = "none"
 
@@ -34,7 +34,8 @@ const palabras = ["HTML",
     "SLACK",
     "DISCORD",
     "UNITY",
-    "CSHARP"
+    "CSHARP",
+    "DATABASE",
 ]
 
 function crearPalabraSecreta(){
@@ -67,9 +68,14 @@ function crearPalabraSecreta(){
     //Esto me sirve para que cuando de nuevo juego se reinicie a 50 la posicion de las palabras erradas
     movimiento = 50
 
+
+    letrasCorrectas = []
+
+
     return palabraAleatoria
 
 }
+
 
 //FUNCION: MOSTRAR GUIONES PARA NUESTRA PALABRA SECRETA
 
@@ -131,41 +137,52 @@ function verificacion(event){
 
 //FUNCION: DIBUJAR LETRA CORRECTA
 
-//const palabraConGuiones = palabraAleatoria.replace(/./g, "_ ");
-
 function dibujarLetra(teclaPresionada){
 
     let palabra = palabraAleatoria
     let tecla = teclaPresionada;
-    console.log(tecla)
     //let arrayPalabra = palabra.split('')
     //console.log(arrayPalabra)
-
-    //let movimiento = (200 / palabraAleatoria.length)
     for(i = 0; i < palabra.length; i++)
     {
-            if(tecla == palabra[i])
+        if(tecla === palabra[i])
+        {   
+
+            if(letrasCorrectas.includes(tecla) == true)
             {
-                /*
-                ctx.translate(movimiento, 0);
-                ctx.font="30pt SMW Text NC";
-                ctx.fillStyle = "white";
-                ctx.fillText(tecla,-200,100);
-                */
-                dibujarLetraCorrecta(tecla,i,palabraAleatoria.length)
-                
+                console.log("ENTRE AL IF")
+                dibujarLetraCorrecta(tecla,i,palabraAleatoria.length)         
                 verificarGanador(palabra)
                 return
-        
             }
+            else{
+                letrasCorrectas.push(tecla)
+                console.log("ENTRE AL ELSE")
+                dibujarLetraCorrecta(tecla,i,palabraAleatoria.length)         
+                verificarGanador(palabra)
+                return
+            }   
+            
+        }
     }
 
     dibujarLetraIncorrecta(tecla)
 
 }
 
+
+/*if(tecla == palabra[i])
+{
+    dibujarLetraCorrecta(tecla,i,palabraAleatoria.length)         
+    verificarGanador(palabra)
+    return
+        
+}*/
+
+
 function dibujarLetraCorrecta(letra, index, posicion) {
-    ctx.fillStyle = "#0A3871";
+    //#0A3871
+    ctx.fillStyle = "orange";
     ctx.font = '35px Roboto Mono';
     ctx.textAlign = 'center';
     var ejeX = index*32 + (canvas.width - posicion * 40) / 2 + 50;
@@ -182,8 +199,8 @@ function dibujarLetraIncorrecta(teclaPresionada){
 
     ctx2.save()
 
+    ctx2.fillStyle = "orange";
     ctx2.font="30pt Roboto Mono";
-    ctx2.fillStyle = "#0A3871";
     ctx2.fillText(teclaPresionada,movimiento,80);
     movimiento+=30;
 
@@ -246,8 +263,8 @@ function dibujar(){
         dibujarFinDelJuego()
 
         //PRINTEA EL MENSAJE DE QUE PALABRA ERA
+        ctx3.fillStyle = "orange";
         ctx3.font="10pt Roboto Mono";
-        ctx3.fillStyle = "#0A3871";
         ctx3.fillText("La palabra era: " + palabra,75,145,);
         
     }
@@ -261,7 +278,7 @@ var ctx3 = canvas3.getContext("2d");
 function dibujarHorca()
 {
     ctx3.lineWidth = 3;
-    ctx3.strokeStyle = "#0A3871";
+    ctx3.strokeStyle = "orange";
 
     //linea horizontal
     ctx3.beginPath();
@@ -351,11 +368,12 @@ function dibujarBrazoDerecho(){
 //FUNCION: DIBUJAR FIN DEL JUEGO
 function dibujarFinDelJuego(){
 
+    ctx3.fillStyle = "orange";
     ctx3.font="10pt Roboto Mono";
-    ctx3.fillStyle = "#0A3871";
     ctx3.fillText("FIN DEL JUEGO",75,80);
     ctx3.fillText("PERDISTE",75,60);
-
+    let soundDerrota = new Audio("./musica_de_fondo/derrota-mario-bros.mp3")
+    soundDerrota.play()
 }
 
 //FUNCION: VERIFICAR GANADOR
@@ -374,9 +392,11 @@ function verificarGanador(palabra){
 //FUNCION: DIBUJAR MENSAJE "GANASTE, FELICIDADES"
 function dibujarMensajeGanaste(){
 
+    ctx3.fillStyle = "orange";
     ctx3.font="10pt Roboto Mono";
-    ctx3.fillStyle = "#0A3871";
     ctx3.fillText("GANASTE FELICIDADES",100,80);
+    let soundVictoria = new Audio("./musica_de_fondo/victoria-mario-bros.mp3")
+    soundVictoria.play()
 
 }
 
@@ -390,9 +410,9 @@ function rendirse(prueba){
         return
     }
     dibujarFinDelJuego()
+    ctx3.fillStyle = "orange";
     ctx3.font="10pt Roboto Mono";
-    ctx3.fillStyle = "#0A3871";
-    ctx3.fillText("La palabra era: " + palabra,70,145,);
+    ctx3.fillText("La palabra era: " + palabra,75,145,);
 
     dibujarHorca()
     dibujarCabeza()
@@ -425,7 +445,7 @@ function agregarPalabra(){
 
     let textoUsuario = document.getElementById("textoInput").value
     textoUsuario.toUpperCase()
-    if(textoUsuario <= 8)
+    if(textoUsuario.length <= 8 && textoUsuario.length >= 3)
     {
         palabras.push(textoUsuario)
         alert("SE AGREGO LA PALABRA CON EXITO")
