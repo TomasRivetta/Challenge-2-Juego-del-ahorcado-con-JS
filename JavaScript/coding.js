@@ -35,6 +35,8 @@ const palabras = [
     "DATABASE",
 ];
 
+
+
 function crearPalabraSecreta() {
     palabraAleatoria = palabras[Math.floor(Math.random() * palabras.length)];
 
@@ -104,8 +106,11 @@ function verificacion(event) {
 
     if (teclaPresionada.match(/^[A-ZÑ]$/i)) {
         dibujarLetra(teclaPresionada);
-    } else {
-        alert("SOLO SE ACEPTAN LETRAS MAYUSCULAS");
+    } 
+    else{
+        if(teclaPresionada.match(/^[0-9]$/i)){
+            alert("SOLO SE ACEPTAN LETRAS MAYUSCULAS");
+        }
     }
 }
 
@@ -135,14 +140,6 @@ function dibujarLetra(teclaPresionada) {
     }
     dibujarLetraIncorrecta(tecla);
 }
-
-/*if(tecla == palabra[i])
-{
-    dibujarLetraCorrecta(tecla,i,palabraAleatoria.length)         
-    verificarGanador(palabra)
-    return
-        
-}*/
 
 function dibujarLetraCorrecta(letra, index, posicion) {
     //#0A3871
@@ -355,13 +352,15 @@ function mostrarAgregarPalabra() {
 function agregarPalabra() {
     let textoUsuario = document.getElementById("textoInput").value;
     textoUsuario.toUpperCase();
-    if (textoUsuario.length <= 8 && textoUsuario.length >= 3) {
+    numeros = /^[0-9]+$/;
+    if (textoUsuario.length <= 8 && textoUsuario.length >= 3 && !textoUsuario.match(numeros)) {
         palabras.push(textoUsuario);
+        localStorage.setItem("palabras" , textoUsuario)
         alert("SE AGREGO LA PALABRA CON EXITO");
         cancelar();
     } else {
         alert(
-            "NO SE PUEDE AGREGAR LA PALABRA PORQUE SUPERA LOS 8 CARACTERES ADEMAS LAS PALABRAS VAN SIN ACENTOS Y CARACTERES ESPECIALES"
+            "NO SE PUEDE AGREGAR LA PALABRA PORQUE SUPERA LOS 8 CARACTERES ADEMAS LAS PALABRAS VAN SIN ACENTOS, SIN CARACTERES ESPECIALES Y SIN NUMEROS"
         );
     }
 }
