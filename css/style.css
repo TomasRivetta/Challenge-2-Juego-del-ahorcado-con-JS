@@ -259,6 +259,12 @@ footer{
 #botonMusica{
     position: absolute;
     margin-top: 35%;
+    margin-left: 85%;
+}
+
+#botonStop{
+    position: absolute;
+    margin-top: 35%;
     margin-left: 90%;
 }
 

@@ -36,6 +36,13 @@ const palabras = [
 ];
 
 
+/*MostrarLocalStorage()
+function MostrarLocalStorage(){
+
+    let pruebaLocalStorage =  localStorage.setItem("LocalStorage",LocalStorage.value);
+    console.log(pruebaLocalStorage)
+}*/
+
 
 function crearPalabraSecreta() {
     palabraAleatoria = palabras[Math.floor(Math.random() * palabras.length)];
@@ -68,6 +75,8 @@ function crearPalabraSecreta() {
     movimiento = 50;
 
     letrasCorrectas = [];
+
+    letrasErrada = [];
 
     return palabraAleatoria;
 }
@@ -102,13 +111,13 @@ function guionesPalabra(palabraAleatoria) {
 document.addEventListener("keydown", verificacion);
 
 function verificacion(event) {
-    const teclaPresionada = event.key.toUpperCase();
+    const teclaPresionada = event.key;
 
-    if (teclaPresionada.match(/^[A-ZÑ]$/i)) {
+    if (teclaPresionada.match(/^[A-ZÑ]$/)) {
         dibujarLetra(teclaPresionada);
     } 
     else{
-        if(teclaPresionada.match(/^[0-9]$/i)){
+        if(teclaPresionada.match(/^[0-9]$/i) || teclaPresionada.match(/^[a-zñ]$/)){
             alert("SOLO SE ACEPTAN LETRAS MAYUSCULAS");
         }
     }
@@ -120,11 +129,14 @@ function dibujarLetra(teclaPresionada) {
     let tecla = teclaPresionada;
     for (i = 0; i < palabra.length; i++) {
         if (tecla == palabra[i]) {
-
-            letrasCorrectas.push(tecla);
-            dibujarLetraCorrecta(tecla, i, palabraAleatoria.length);
-
             if (letrasCorrectas.includes(tecla) == true) {
+                console.log("Ya ingreso esa letra correcta")
+                console.log(letrasCorrectas);
+            }
+            else
+            {
+                dibujarLetraCorrecta(tecla, i, palabraAleatoria.length);
+                letrasCorrectas.push(tecla);
                 console.log("ENTRE")
                 for (j = 0; j < palabra.length; j++) {
                     if (tecla == palabra[j]) {
@@ -133,12 +145,12 @@ function dibujarLetra(teclaPresionada) {
                         verificarGanador(palabra);
                     }
                 }
-                console.log(letrasCorrectas);
             }
             return
         }
     }
     dibujarLetraIncorrecta(tecla);
+    letrasErrada.push(tecla);
 }
 
 function dibujarLetraCorrecta(letra, index, posicion) {
@@ -159,14 +171,21 @@ var ctx2 = canvas2.getContext("2d");
 
 function dibujarLetraIncorrecta(teclaPresionada) {
     ctx2.save();
-
-    ctx2.fillStyle = "orange";
-    ctx2.font = "30pt Roboto Mono";
-    ctx2.fillText(teclaPresionada, movimiento, 80);
-    movimiento += 30;
-    let soundError = new Audio("./musica_de_fondo/sonido-de-error.mp3");
-    soundError.play();
-    dibujar();
+    
+    if(letrasErrada.includes(teclaPresionada))
+    {
+        console.log("Ya ingreso esa letra errada")
+    }
+    else
+    {
+        ctx2.fillStyle = "orange";
+        ctx2.font = "30pt Roboto Mono";
+        ctx2.fillText(teclaPresionada, movimiento, 80);
+        movimiento += 30;
+        let soundError = new Audio("./musica_de_fondo/sonido-de-error.mp3");
+        soundError.play();
+        dibujar();
+    }
 }
 
 //FUNCION: DIBUJAR HORCA
@@ -310,6 +329,7 @@ function dibujarMensajeGanaste() {
     ctx3.fillText("GANASTE FELICIDADES", 100, 80);
     let soundVictoria = new Audio("./musica_de_fondo/victoria-mario-bros.mp3");
     soundVictoria.play();
+
 }
 
 //FUNCION: RENDIRSE
@@ -351,16 +371,19 @@ function mostrarAgregarPalabra() {
 //FUNCION: AGREGAR PALABRA
 function agregarPalabra() {
     let textoUsuario = document.getElementById("textoInput").value;
-    textoUsuario.toUpperCase();
+    //textoUsuario.toUpperCase();
     numeros = /^[0-9]+$/;
-    if (textoUsuario.length <= 8 && textoUsuario.length >= 3 && !textoUsuario.match(numeros)) {
-        palabras.push(textoUsuario);
-        localStorage.setItem("palabras" , textoUsuario)
+    mayusculasIngresoTexto = /^[A-ZÑ]+$/;
+    
+    if (textoUsuario.length <= 8 && textoUsuario.length >= 3 && !textoUsuario.match(numeros) && textoUsuario.match(mayusculasIngresoTexto)) {
+        //palabras.push(textoUsuario);
+        localStorage.setItem("LocalStorage" , textoUsuario)
         alert("SE AGREGO LA PALABRA CON EXITO");
+        document.getElementById("textoInput").value = ""
         cancelar();
     } else {
         alert(
-            "NO SE PUEDE AGREGAR LA PALABRA PORQUE SUPERA LOS 8 CARACTERES ADEMAS LAS PALABRAS VAN SIN ACENTOS, SIN CARACTERES ESPECIALES Y SIN NUMEROS"
+            "NO SE PUEDE AGREGAR LA PALABRA PORQUE: NO SE ACEPTAN LETRAS EN MINUSCULA || SUPERA LOS 8 CARACTERES || LA PALABRA VA SIN ACENTOS || SIN CARACTERES ESPECIALES || SIN NUMEROS"
         );
     }
 }
@@ -372,11 +395,5 @@ function cancelar() {
     document.getElementById("advertencia").style.display = "none";
     document.getElementById("boton-confirmarPalabraNueva").style.display = "none";
     document.getElementById("boton-cancelarPalabraNueva").style.display = "none";
+    document.getElementById("textoInput").value = ""
 }
-
-//Musica de fondo
-/*function mute() {
-    var aud = document.getElementById("music");
-    if (aud.muted == false) {aud.muted = true}
-    else {aud.muted = false}
-}*/
