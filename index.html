@@ -15,7 +15,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
-    
+
+    <!--PARA CAMBIAR LOS ALERT-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </head>
 <body>
     <header>
@@ -53,7 +56,7 @@
             <div>
                 <button class="boton-nuevoJuego" id="boton-nuevoJuego" onclick="crearPalabraSecreta()">Nuevo Juego</button>
                 <button class="boton-Rendirse" id="boton-rendirse" onclick="rendirse()">Rendirse</button>
-                <button class="boton-agregarPalabra" onclick="mostrarAgregarPalabra()">Agregar Palabra</button>
+                <button class="boton-agregarPalabra" onclick="mostrarAgregarPalabra(),musicaPausa()">Agregar Palabra</button>
             </div>
         </div>
 
@@ -66,17 +69,8 @@
             
             <button id="boton-confirmarPalabraNueva" onclick="agregarPalabra()">Agregar palabra</button>
             <button id="boton-cancelarPalabraNueva" onclick="cancelar()">Cancelar</button>
-        
-        
-            <!--MUSICA DE FONDO PENSAR BIEN LA IDEA
-        </div>
-            <input id="botonMusica" type="image" src="image/botonMusica.png" alt="" width="48" height="48" onclick="sonido()">
-        <div>
-        </div>
-        <div>
-            <input id="botonStop" type="image" src="image/botonStop.png" alt="" width="48" height="48" onclick="stop()">
-        </div>-->
     </main>
+    
     <footer>
         <div class="footer">
             <p>Hecho por Tomas Rivetta. Challenge-2-Alura-ONE</p>
