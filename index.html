@@ -22,17 +22,17 @@
 </head>
 <body>
     <header>
-        <div>
+        <div class="contenedorImagen">
             <a class="logo" href="https://www.aluracursos.com" target="_blank"><img src="image/Logo.png" title="Logo Alura" alt="Logo Alura"></a>
         </div>
     </header>
     <main>
 
         <!--PARTE 1-->
-        <div>
+        <div class="contenedorBotones">
 
             <button class="botonIniciar" id="boton-iniciar" onclick="ocultar(),mostrar(),crearPalabraSecreta()">Iniciar Juego</button>
-            <button class="botonAgregar" id="boton-agregar" onclick="mostrarAgregarPalabra()">Agregar nueva palabra</button>
+            <button class="botonAgregar" id="boton-agregar" onclick="mostrarAgregarPalabra()">Agregar palabra</button>
 
         </div>
 
@@ -53,7 +53,7 @@
 
             </div>
             
-            <div>
+            <div class="botonesParteDos">
                 <button class="boton-nuevoJuego" id="boton-nuevoJuego" onclick="crearPalabraSecreta()">Nuevo Juego</button>
                 <button class="boton-Rendirse" id="boton-rendirse" onclick="rendirse()">Rendirse</button>
                 <button class="boton-agregarPalabra" onclick="mostrarAgregarPalabra(),musicaPausa()">Agregar Palabra</button>
@@ -62,22 +62,31 @@
 
         <!--PARTE 3-->
         <div id="ingresoTexto">
-    
+
             <textarea id="textoInput" class="texto-ingresado" placeholder="Ingrese el texto" name="textarea" rows="20" cols="93"></textarea>
-            
-            <p id="advertencia">&#9888; Maximo 8 caracteres, sin acentos y caracteres especiales</p>
-            
-            <button id="boton-confirmarPalabraNueva" onclick="agregarPalabra()">Agregar palabra</button>
-            <button id="boton-cancelarPalabraNueva" onclick="cancelar()">Cancelar</button>
+            <div class="contenedorAdvertencia">
+
+                <p id="advertencia">&#9888; Maximo 8 caracteres, sin acentos y caracteres especiales</p>
+
+            </div>
+            <div class="contenedorBotones2">
+                
+                <button id="boton-confirmarPalabraNueva" onclick="agregarPalabra()">Agregar palabra</button>
+
+                <button id="boton-cancelarPalabraNueva" onclick="cancelar()">Cancelar</button>
+
+            </div>
+        </div>
+
     </main>
-    
+    <!--
     <footer>
         <div class="footer">
             <p>Hecho por Tomas Rivetta. Challenge-2-Alura-ONE</p>
             <a href="https://github.com/TomasRivetta" target="_blanck"><img class="logoGitHub" src="image/github.png"></a>
             <a href="https://www.linkedin.com/in/tomas-rivetta-1b324a246/" target="_blanck"><img class="logoLinkedin" src="image/linkedin.png"></a>
         </div>
-    </footer>
+    </footer>-->
 
     <script src="JavaScript/coding.js"></script>
 </body>
