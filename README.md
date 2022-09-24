@@ -33,3 +33,4 @@ vamos a trabajar en un proyecto de juego del ahorcado
 <hr>
 
 ### Insignia:
+![unnamed](https://user-images.githubusercontent.com/109299616/192115681-247af857-da0f-4162-91b7-93662df95441.png)
