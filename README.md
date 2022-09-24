@@ -32,4 +32,4 @@ vamos a trabajar en un proyecto de juego del ahorcado
 
 <hr>
 
-### Insignia
+### Insignia:
