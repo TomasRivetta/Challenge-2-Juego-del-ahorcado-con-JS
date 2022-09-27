@@ -29,3 +29,8 @@ vamos a trabajar en un proyecto de juego del ahorcado
 ### Extras :interrobang::
 
 * La página debe tener un campo para inserción de texto con la finalidad de adicionar nuevas palabras al juego, e un botón "Agregar palabra".
+
+<hr>
+
+### Insignia:
+![unnamed](https://user-images.githubusercontent.com/109299616/192115681-247af857-da0f-4162-91b7-93662df95441.png)
