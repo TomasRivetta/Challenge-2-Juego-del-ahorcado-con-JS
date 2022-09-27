@@ -9,6 +9,7 @@ function mostrar() {
 function ocultar() {
     document.getElementById("boton-iniciar").style.display = "none";
     document.getElementById("boton-agregar").style.display = "none";
+
 }
 
 //FUNCION: CREAR PALABRA SECRETA
@@ -56,6 +57,9 @@ function crearPalabraSecreta() {
 
     //reinicio el contador  para que se reinice el verificador de si gano o no
     contador = 0;
+
+    //reinicio el contador para que no se siguen escribierndo letras cuando el jugador se queda sin intentos
+    intentoErrores = 0
 
     //llamo a la funcion rendirse para que muestre que  palabra era
     contadorRendirme = 0;
@@ -146,12 +150,14 @@ function dibujarLetra(teclaPresionada) {
 }
 
 function dibujarLetraCorrecta(letra, index, posicion) {
-    //#0A3871
+
     ctx.fillStyle = "orange";
     ctx.font = "35px Roboto Mono";
     ctx.textAlign = "center";
     var ejeX = index * 32 + (canvas.width - posicion * 40) / 2 + 50;
     ctx.fillText(letra, ejeX, 120);
+
+
 }
 
 var canvas2 = document.getElementById("mostrarPalabrasUsadas");
@@ -161,19 +167,34 @@ var ctx2 = canvas2.getContext("2d");
 
 function dibujarLetraIncorrecta(teclaPresionada) {
     ctx2.save();
-    
+
     if(letrasErrada.includes(teclaPresionada))
     {
         console.log("Ya ingreso esa letra errada")
     }
     else
     {
-        ctx2.fillStyle = "orange";
-        ctx2.font = "30pt Roboto Mono";
-        ctx2.fillText(teclaPresionada, movimiento, 80);
-        movimiento += 30;
-        dibujar();
-    }
+        if(intentoErrores < 7)
+        {
+
+            ctx2.fillStyle = "orange";
+            ctx2.font = "30pt Roboto Mono";
+            ctx2.fillText(teclaPresionada, movimiento, 80);
+            movimiento += 30;
+            dibujar();
+            intentoErrores++;
+        }
+        else{
+            swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+        }
+    }   
+
+    /*else if(intento <= 7)
+    {
+
+    else{
+        swal("Ya se le agotaron los intentos","dele a nuevo juego para continuar","error")
+    }*/
 }
 
 //FUNCION: DIBUJAR HORCA
@@ -323,11 +344,12 @@ function rendirse(contadorRendirme) {
     if (intento == 0) {
         return;
     }
+
     dibujarFinDelJuego();
     ctx3.fillStyle = "orange";
     ctx3.font = "10pt Roboto Mono";
     ctx3.fillText("La palabra era: " + palabra, 75, 145);
-
+    
     dibujarHorca();
     dibujarCabeza();
     dibujarTronco();
@@ -335,6 +357,10 @@ function rendirse(contadorRendirme) {
     dibujarPiernaDerecha();
     dibujarBrazoIzquierdo();
     dibujarBrazoDerecho();
+
+    //se declara con 7 para que no se puedan seguir escribiendo LETRAS INCORRECTAS en caso
+    //de presionar el boton rendirse
+    intentoErrores = 7;
 }
 
 //PARTE 3
