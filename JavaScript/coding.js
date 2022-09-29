@@ -110,7 +110,13 @@ function verificacion(event) {
     const teclaPresionada = event.key;
 
     if (teclaPresionada.match(/^[A-ZÑ]$/)) {
-        dibujarLetra(teclaPresionada);
+        if(intentoErrores < 7){
+            dibujarLetra(teclaPresionada);
+        }
+        else
+        {
+            swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+        }
     } 
     else{
         if(teclaPresionada.match(/^[0-9]$/i) || teclaPresionada.match(/^[a-zñ]$/)){
@@ -174,27 +180,13 @@ function dibujarLetraIncorrecta(teclaPresionada) {
     }
     else
     {
-        if(intentoErrores < 7)
-        {
-
-            ctx2.fillStyle = "orange";
-            ctx2.font = "30pt Roboto Mono";
-            ctx2.fillText(teclaPresionada, movimiento, 80);
-            movimiento += 30;
-            dibujar();
-            intentoErrores++;
-        }
-        else{
-            swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
-        }
-    }   
-
-    /*else if(intento <= 7)
-    {
-
-    else{
-        swal("Ya se le agotaron los intentos","dele a nuevo juego para continuar","error")
-    }*/
+        ctx2.fillStyle = "orange";
+        ctx2.font = "30pt Roboto Mono";
+        ctx2.fillText(teclaPresionada, movimiento, 80);
+        movimiento += 30;
+        dibujar();
+        intentoErrores++;
+    } 
 }
 
 //FUNCION: DIBUJAR HORCA
@@ -317,6 +309,7 @@ function dibujarFinDelJuego() {
     ctx3.font = "10pt Roboto Mono";
     ctx3.fillText("FIN DEL JUEGO", 75, 80);
     ctx3.fillText("PERDISTE", 75, 60);
+    intentoErrores = 7;
 }
 
 //FUNCION: VERIFICAR GANADOR
@@ -334,7 +327,7 @@ function dibujarMensajeGanaste() {
     ctx3.fillStyle = "orange";
     ctx3.font = "10pt Roboto Mono";
     ctx3.fillText("GANASTE FELICIDADES", 100, 80);
-
+    intentoErrores = 7;
 }
 
 //FUNCION: RENDIRSE
