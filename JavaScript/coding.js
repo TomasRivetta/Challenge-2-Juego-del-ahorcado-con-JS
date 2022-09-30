@@ -113,8 +113,7 @@ function verificacion(event) {
         if(intentoErrores < 7){
             dibujarLetra(teclaPresionada);
         }
-        else
-        {
+        else{
             swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
         }
     } 
@@ -162,7 +161,6 @@ function dibujarLetraCorrecta(letra, index, posicion) {
     ctx.textAlign = "center";
     var ejeX = index * 32 + (canvas.width - posicion * 40) / 2 + 50;
     ctx.fillText(letra, ejeX, 120);
-
 
 }
 
