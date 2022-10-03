@@ -526,7 +526,7 @@ function cancelar() {
     document.getElementById("advertencia").style.display = "none";
     document.getElementById("boton-confirmarPalabraNueva").style.display = "none";
     document.getElementById("boton-cancelarPalabraNueva").style.display = "none";
-    document.getElementById("contenedorBotones").style.display = "block";
+    document.getElementById("contenedorBotones").style.display = "flex";
     document.getElementById("textoInput").value = ""
 }
 
