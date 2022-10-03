@@ -9,6 +9,7 @@ function mostrar() {
 function ocultar() {
     document.getElementById("boton-iniciar").style.display = "none";
     document.getElementById("boton-agregar").style.display = "none";
+    document.getElementById("contenedorBotones").style.display = "none";
 
 }
 
@@ -525,6 +526,7 @@ function cancelar() {
     document.getElementById("advertencia").style.display = "none";
     document.getElementById("boton-confirmarPalabraNueva").style.display = "none";
     document.getElementById("boton-cancelarPalabraNueva").style.display = "none";
+    document.getElementById("contenedorBotones").style.display = "block";
     document.getElementById("textoInput").value = ""
 }
 
