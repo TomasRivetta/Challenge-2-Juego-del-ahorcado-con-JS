@@ -97,12 +97,143 @@ function guionesPalabra(palabraAleatoria) {
     //console.log(guiones)
 }
 
+//LAS SIGUIENTES FUNCIONES SON PARA PODER HACERLO PARA CELULAR/TABLET
+function botonMobileAA(){
+    botonesMobileA = document.getElementById("botonLetraA").value
+    dibujarLetra(botonesMobileA)
+}
+
+function botonMobileBB(){
+    botonesMobileB = document.getElementById("botonLetraB").value
+    dibujarLetra(botonesMobileB)
+}
+
+function botonMobileCC(){
+    botonesMobileC = document.getElementById("botonLetraC").value
+    dibujarLetra(botonesMobileC)
+}
+
+function botonMobileDD(){
+    botonesMobileD = document.getElementById("botonLetraD").value
+    dibujarLetra(botonesMobileD)
+}
+
+function botonMobileEE(){
+    botonesMobileE = document.getElementById("botonLetraE").value
+    dibujarLetra(botonesMobileE)
+}
+
+function botonMobileFF(){
+    botonesMobileF = document.getElementById("botonLetraF").value
+    dibujarLetra(botonesMobileF)
+}
+
+function botonMobileGG(){
+    botonesMobileG = document.getElementById("botonLetraG").value
+    dibujarLetra(botonesMobileG)
+}
+
+function botonMobileHH(){
+    botonesMobileH = document.getElementById("botonLetraH").value
+    dibujarLetra(botonesMobileH)
+}
+
+function botonMobileII(){
+    botonesMobileI = document.getElementById("botonLetraI").value
+    dibujarLetra(botonesMobileI)
+}
+
+function botonMobileJJ(){
+    botonesMobileJ = document.getElementById("botonLetraJ").value
+    dibujarLetra(botonesMobileJ)
+}
+
+function botonMobileKK(){
+    botonesMobileK = document.getElementById("botonLetraK").value
+    dibujarLetra(botonesMobileK)
+}
+
+function botonMobileLL(){
+    botonesMobileL = document.getElementById("botonLetraL").value
+    dibujarLetra(botonesMobileL)
+}
+
+function botonMobileMM(){
+    botonesMobileM = document.getElementById("botonLetraM").value
+    dibujarLetra(botonesMobileM)
+}
+
+function botonMobileNN(){
+    botonesMobileN = document.getElementById("botonLetraN").value
+    dibujarLetra(botonesMobileN)
+}
+
+function botonMobileÑÑ(){
+    botonesMobileÑ = document.getElementById("botonLetraÑ").value
+    dibujarLetra(botonesMobileÑ)
+}
+
+function botonMobileOO(){
+    botonesMobileO = document.getElementById("botonLetraO").value
+    dibujarLetra(botonesMobileO)
+}
+
+function botonMobilePP(){
+    botonesMobileP = document.getElementById("botonLetraP").value
+    dibujarLetra(botonesMobileP)
+}
+
+function botonMobileQQ(){
+    botonesMobileQ = document.getElementById("botonLetraQ").value
+    dibujarLetra(botonesMobileQ)
+}
+
+function botonMobileRR(){
+    botonesMobileR = document.getElementById("botonLetraR").value
+    dibujarLetra(botonesMobileR)
+}
+
+function botonMobileSS(){
+    botonesMobileS = document.getElementById("botonLetraS").value
+    dibujarLetra(botonesMobileS)
+}
+
+function botonMobileTT(){
+    botonesMobileT = document.getElementById("botonLetraT").value
+    dibujarLetra(botonesMobileT)
+}
+
+function botonMobileUU(){
+    botonesMobileU = document.getElementById("botonLetraU").value
+    dibujarLetra(botonesMobileU)
+}
+
+function botonMobileVV(){
+    botonesMobileV = document.getElementById("botonLetraV").value
+    dibujarLetra(botonesMobileV)
+}
+function botonMobileWW(){
+    botonesMobileW = document.getElementById("botonLetraW").value
+    dibujarLetra(botonesMobileW)
+}
+function botonMobileXX(){
+    botonesMobileX = document.getElementById("botonLetraX").value
+    dibujarLetra(botonesMobileX)
+}
+function botonMobileYY(){
+    botonesMobileY = document.getElementById("botonLetraY").value
+    dibujarLetra(botonesMobileY)
+}
+function botonMobileZZ(){
+    botonesMobileZ = document.getElementById("botonLetraZ").value
+    dibujarLetra(botonesMobileZ)
+}
+
 //FUNCION: VERIFICAR SI LA TECLA PRESIONADA ES UNA LETRA
 //- Debe funcionar solo con letras mayúsculas;
 //- No deben ser utilizadas letras con acentos ni caracteres especiales;
 //console.log(event)
 //console.log(event.key)
-
 
 document.addEventListener("keydown", verificacion);
 
@@ -396,3 +527,4 @@ function cancelar() {
     document.getElementById("boton-cancelarPalabraNueva").style.display = "none";
     document.getElementById("textoInput").value = ""
 }
+
