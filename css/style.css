@@ -27,6 +27,10 @@ header{
 
 #mostrarJuego{
     display: none;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
 }
 
 main{
@@ -312,13 +316,13 @@ main{
 }
 
 @media (max-width: 672px) {
-    .botonesParteDos{
-        flex-direction: column;
-    }
 }
 
 @media (max-width: 480px) {
-
+    .botonesParteDos{
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 @media (max-width: 375px) {
