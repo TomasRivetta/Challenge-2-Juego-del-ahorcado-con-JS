@@ -33,14 +33,11 @@ header{
     margin-top: 2%;
 }
 
-main{
-    display: flex;
-}
 
 .contenedorBotones{
     display: flex;
-    margin-top: 10%;
-    margin-left: 40%;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
 }
 
@@ -64,7 +61,6 @@ main{
 
 .botonAgregar{
 
-    margin-top: 22%;
     left: 38%;
 
     background: orange;
@@ -102,7 +98,6 @@ main{
     font-family: 'Roboto Mono', monospace;
     font-size: 15px;
 
-    line-height: 20%;
     cursor: pointer;
 }
 
@@ -116,7 +111,7 @@ main{
     font-family: 'Roboto Mono', monospace;
     font-size: 15px;
 
-    line-height: 20%;
+    
     cursor: pointer;
 }
 
@@ -129,8 +124,6 @@ main{
 
     font-family: 'Roboto Mono', monospace;
     font-size: 15px;
-
-    line-height: 20%;
     cursor: pointer;
 }
 
@@ -194,6 +187,12 @@ main{
     display: none;
 }
 
+#ingresoTexto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 #textoInput{
     height: 250px;
@@ -231,12 +230,11 @@ main{
     border: 3px solid #0A3871; 
     border-radius: 50px;
     padding: 40px;
-
+    
     font-family: 'Roboto Mono', monospace;
 
     font-size: 15px;
 
-    line-height: 20%;
     cursor: pointer;
 }
 
@@ -252,7 +250,7 @@ main{
 
     font-size: 15px;
 
-    line-height: 20%;
+    
     cursor: pointer;
 }
 
@@ -277,42 +275,44 @@ main{
 @media (max-width: 1024px) {
 
 }
+
 @media (max-width: 768px) {
+
+
+    #miAhorcado{
+    
+        display: flex;
+        width: 100%;
+        height: 150px;
+    }
+
 
     #micanvas{
 
         display: flex;
-        width: 80%;
+        width: 100%;
         height: 50px;
     }
     
     #mostrarPalabrasUsadas{
     
         display: flex;
-        width: 80%;
+        width: 100%;
         height: 60px;
         
     }
     
-    #miAhorcado{
-    
-        display: flex;
-        width: 80%;
-        height: 200px;
-    
-    }
-
-    .contenedorBotones{
-        margin-left: 38%;
-    }
-
     .botonesParaCelularTablet{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        
+        align-items: center;
     }
 
+
+    .contenedorBotones2{
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 672px) {
@@ -331,8 +331,5 @@ main{
 
 @media (max-width: 320px) {
 
-    .contenedorBotones{
-        margin-left: 20%;
-    }
 
 }
