@@ -100,135 +100,336 @@ function guionesPalabra(palabraAleatoria) {
 
 //LAS SIGUIENTES FUNCIONES SON PARA PODER HACERLO PARA CELULAR/TABLET
 function botonMobileAA(){
-    botonesMobileA = document.getElementById("botonLetraA").value
-    dibujarLetra(botonesMobileA)
+    if(intentoErrores < 7){
+        
+        botonesMobileA = document.getElementById("botonLetraA").value
+        dibujarLetra(botonesMobileA)
+
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
 
 function botonMobileBB(){
-    botonesMobileB = document.getElementById("botonLetraB").value
-    dibujarLetra(botonesMobileB)
+    if(intentoErrores < 7){
+
+        botonesMobileB = document.getElementById("botonLetraB").value
+        dibujarLetra(botonesMobileB)
+
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
 
 function botonMobileCC(){
-    botonesMobileC = document.getElementById("botonLetraC").value
-    dibujarLetra(botonesMobileC)
+    
+    if(intentoErrores < 7){
+
+        botonesMobileC = document.getElementById("botonLetraC").value
+        dibujarLetra(botonesMobileC)
+
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
 
 function botonMobileDD(){
-    botonesMobileD = document.getElementById("botonLetraD").value
-    dibujarLetra(botonesMobileD)
+    if(intentoErrores < 7){
+        
+        botonesMobileD = document.getElementById("botonLetraD").value
+        dibujarLetra(botonesMobileD)
+
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
 
 function botonMobileEE(){
-    botonesMobileE = document.getElementById("botonLetraE").value
-    dibujarLetra(botonesMobileE)
+    if(intentoErrores < 7){
+        
+        botonesMobileE = document.getElementById("botonLetraE").value
+        dibujarLetra(botonesMobileE)
+
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
 
 function botonMobileFF(){
-    botonesMobileF = document.getElementById("botonLetraF").value
-    dibujarLetra(botonesMobileF)
+    if(intentoErrores < 7){
+        
+        botonesMobileF = document.getElementById("botonLetraF").value
+        dibujarLetra(botonesMobileF)
+
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
 
 function botonMobileGG(){
-    botonesMobileG = document.getElementById("botonLetraG").value
-    dibujarLetra(botonesMobileG)
+    if(intentoErrores < 7){
+        
+        botonesMobileG = document.getElementById("botonLetraG").value
+        dibujarLetra(botonesMobileG)
+
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
 
 function botonMobileHH(){
-    botonesMobileH = document.getElementById("botonLetraH").value
-    dibujarLetra(botonesMobileH)
+    if(intentoErrores < 7){
+        
+        botonesMobileH = document.getElementById("botonLetraH").value
+        dibujarLetra(botonesMobileH)
+
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
 
 function botonMobileII(){
-    botonesMobileI = document.getElementById("botonLetraI").value
-    dibujarLetra(botonesMobileI)
+    if(intentoErrores < 7){
+        
+        botonesMobileI = document.getElementById("botonLetraI").value
+        dibujarLetra(botonesMobileI)
+
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
 
 function botonMobileJJ(){
-    botonesMobileJ = document.getElementById("botonLetraJ").value
-    dibujarLetra(botonesMobileJ)
+    if(intentoErrores < 7){
+        
+        botonesMobileJ = document.getElementById("botonLetraJ").value
+        dibujarLetra(botonesMobileJ)
+
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
 
 function botonMobileKK(){
-    botonesMobileK = document.getElementById("botonLetraK").value
-    dibujarLetra(botonesMobileK)
+    if(intentoErrores < 7){
+        
+        botonesMobileK = document.getElementById("botonLetraK").value
+        dibujarLetra(botonesMobileK)
+
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
 
 function botonMobileLL(){
-    botonesMobileL = document.getElementById("botonLetraL").value
-    dibujarLetra(botonesMobileL)
+    if(intentoErrores < 7){
+        
+        botonesMobileL = document.getElementById("botonLetraL").value
+        dibujarLetra(botonesMobileL)
+
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
 
 function botonMobileMM(){
-    botonesMobileM = document.getElementById("botonLetraM").value
-    dibujarLetra(botonesMobileM)
+    if(intentoErrores < 7){
+        
+        botonesMobileM = document.getElementById("botonLetraM").value
+        dibujarLetra(botonesMobileM)
+
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
 
 function botonMobileNN(){
-    botonesMobileN = document.getElementById("botonLetraN").value
-    dibujarLetra(botonesMobileN)
+    if(intentoErrores < 7){
+        
+        botonesMobileN = document.getElementById("botonLetraN").value
+        dibujarLetra(botonesMobileN)
+
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
 
 function botonMobileÑÑ(){
-    botonesMobileÑ = document.getElementById("botonLetraÑ").value
-    dibujarLetra(botonesMobileÑ)
+    if(intentoErrores < 7){
+        
+        botonesMobileÑ = document.getElementById("botonLetraÑ").value
+        dibujarLetra(botonesMobileÑ)
+
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
 
 function botonMobileOO(){
-    botonesMobileO = document.getElementById("botonLetraO").value
-    dibujarLetra(botonesMobileO)
+    if(intentoErrores < 7){
+        
+        botonesMobileO = document.getElementById("botonLetraO").value
+        dibujarLetra(botonesMobileO)
+        
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
 
 function botonMobilePP(){
-    botonesMobileP = document.getElementById("botonLetraP").value
-    dibujarLetra(botonesMobileP)
+    if(intentoErrores < 7){
+        
+        botonesMobileP = document.getElementById("botonLetraP").value
+        dibujarLetra(botonesMobileP)
+
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
 
 function botonMobileQQ(){
-    botonesMobileQ = document.getElementById("botonLetraQ").value
-    dibujarLetra(botonesMobileQ)
+    if(intentoErrores < 7){
+        
+        botonesMobileQ = document.getElementById("botonLetraQ").value
+        dibujarLetra(botonesMobileQ)
+        
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
 
 function botonMobileRR(){
-    botonesMobileR = document.getElementById("botonLetraR").value
-    dibujarLetra(botonesMobileR)
+    if(intentoErrores < 7){
+        
+        botonesMobileR = document.getElementById("botonLetraR").value
+        dibujarLetra(botonesMobileR)
+
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
 
 function botonMobileSS(){
-    botonesMobileS = document.getElementById("botonLetraS").value
-    dibujarLetra(botonesMobileS)
+    if(intentoErrores < 7){
+        
+        botonesMobileS = document.getElementById("botonLetraS").value
+        dibujarLetra(botonesMobileS)
+        
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
 
 function botonMobileTT(){
-    botonesMobileT = document.getElementById("botonLetraT").value
-    dibujarLetra(botonesMobileT)
+    if(intentoErrores < 7){
+
+        botonesMobileT = document.getElementById("botonLetraT").value
+        dibujarLetra(botonesMobileT)
+        
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
 
 function botonMobileUU(){
-    botonesMobileU = document.getElementById("botonLetraU").value
-    dibujarLetra(botonesMobileU)
+
+    if(intentoErrores < 7){
+
+        botonesMobileU = document.getElementById("botonLetraU").value
+        dibujarLetra(botonesMobileU)
+
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
 
 function botonMobileVV(){
-    botonesMobileV = document.getElementById("botonLetraV").value
-    dibujarLetra(botonesMobileV)
+    if(intentoErrores < 7){
+
+        botonesMobileV = document.getElementById("botonLetraV").value
+        dibujarLetra(botonesMobileV)
+
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
+
 function botonMobileWW(){
-    botonesMobileW = document.getElementById("botonLetraW").value
-    dibujarLetra(botonesMobileW)
+    if(intentoErrores < 7){
+
+        botonesMobileW = document.getElementById("botonLetraW").value
+        dibujarLetra(botonesMobileW)   
+
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
+
 }
+
 function botonMobileXX(){
-    botonesMobileX = document.getElementById("botonLetraX").value
-    dibujarLetra(botonesMobileX)
+    if(intentoErrores < 7){
+
+        botonesMobileX = document.getElementById("botonLetraX").value
+        dibujarLetra(botonesMobileX)
+        
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
+
 function botonMobileYY(){
-    botonesMobileY = document.getElementById("botonLetraY").value
-    dibujarLetra(botonesMobileY)
+    
+    if(intentoErrores < 7){
+        
+        botonesMobileY = document.getElementById("botonLetraY").value
+        dibujarLetra(botonesMobileY)
+
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
+
 function botonMobileZZ(){
-    botonesMobileZ = document.getElementById("botonLetraZ").value
-    dibujarLetra(botonesMobileZ)
+    if(intentoErrores < 7){
+        
+        botonesMobileZ = document.getElementById("botonLetraZ").value
+        dibujarLetra(botonesMobileZ)
+
+    }
+    else{
+        swal("Ya se le agotaron los intentos 😢","Presione 'nuevo juego' para reiniciar el juego","error")
+    }
 }
+
+
+//FIN DE LAS FUNCIONES QUE SON PARA PODER HACERLO PARA CELULAR/TABLET
+
 
 //FUNCION: VERIFICAR SI LA TECLA PRESIONADA ES UNA LETRA
 //- Debe funcionar solo con letras mayúsculas;
