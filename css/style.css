@@ -45,7 +45,7 @@ header{
 .botonIniciar{
 
     margin-top: 13%;
-    left: 38%;
+    margin-bottom: 5%;
 
     background: orange;
     border: 3px solid #0A3871; 
@@ -61,7 +61,7 @@ header{
 
 .botonAgregar{
 
-    left: 38%;
+    
 
     background: orange;
     border: 3px solid #0A3871; 
@@ -139,9 +139,10 @@ header{
 }
 
 .botonMobile{
-    border: 3px solid #0A3871;;
+    border: 3px solid #0A3871;
     border-radius:3px ;
     background-color: orange;
+    margin-bottom: 2%;
 }
 
 /* ESTILOS DE EL HTML JUEGO */
@@ -215,6 +216,7 @@ header{
     color: black;
     margin-top: 5%;
     font-family: 'Roboto Mono', monospace;
+    text-align: center;
 
 }
 
@@ -229,7 +231,7 @@ header{
     background: orange;
     border: 3px solid #0A3871; 
     border-radius: 50px;
-    padding: 40px;
+    padding: 20px;
     
     font-family: 'Roboto Mono', monospace;
 
@@ -244,7 +246,7 @@ header{
     background: orange;
     border: 3px solid #0A3871; 
     border-radius: 50px;
-    padding: 40px;
+    padding: 20px;
 
     font-family: 'Roboto Mono', monospace;
 
@@ -323,6 +325,11 @@ header{
         flex-direction: column;
         align-items: center;
     }
+
+    .boton-nuevoJuego, .boton-Rendirse, .boton-agregarPalabra{
+        margin-bottom: 5%;
+    }
+
 }
 
 @media (max-width: 375px) {
