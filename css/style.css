@@ -1,342 +1,494 @@
 
-body{
-    background-image: url("../image/fondo.png");
-    width: auto;
-    height: auto;
-    position: relative;
+/*-////////// PALETA DE COLORES //////////-*/
+
+:root {
+
+    --color-primario: #6096B4;
+
+    --color-secundario: #93BFCF;
+
+    --color-terciario: #BDCDD6;
+
+    --color-cuaternario: #EEE9DA;
+
+    --font-family: 'Roboto Mono', monospace;
+
 }
 
-/*---------------------------------*/
 
-header{
-    width: 100%;
-    height: 100px;
+
+/*-////////// BODY //////////-*/
+
+html {
+
+    height: 100%;
+
 }
-.contenedorImagen{
+
+
+
+body {
+
+    background-image: linear-gradient(to top, #6096B4 0%, #93BFCF 100%);
+
+    min-height: 100%;
+
     display: flex;
-}
 
-.logo{
-    margin-left: 10%;
-    margin-top: 5%;
-    left: 50px;
-    width: 10px;
-}
-
-/*---------------------------------*/
-
-#mostrarJuego{
-    display: none;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2%;
-}
-
-
-.contenedorBotones{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+
+    font-family: var(--font-family);
+
+    color: var(--color-cuaternario);
+
 }
 
 
-.botonIniciar{
 
-    margin-top: 13%;
-    margin-bottom: 5%;
+main {
 
-    background: orange;
-    border: 3px solid #0A3871; 
-    border-radius: 50px;
-    padding: 40px;
+    flex-grow: 1;
 
-    font-family: 'Roboto Mono', monospace;
-    font-size: 15px;
-    line-height: 20%;
-    
+}
+
+
+
+/*-////////// HEADER //////////-*/
+
+header {
+
+    width: 100%;
+
+    padding: 20px 0;
+
+}
+
+
+
+.logo {
+
+    margin-left: 5%;
+
+    width: 32px;
+
+}
+
+
+
+/*-////////// BOTONES //////////-*/
+
+.btn {
+
+    padding: 20px 24px;
+
+    border: 2px solid var(--color-primario);
+
+    border-radius: 24px;
+
+    font-family: var(--font-family);
+
+    font-size: 1em;
+
     cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    text-align: center;
+
 }
 
-.botonAgregar{
 
+
+.btn-primary {
+
+    background-color: var(--color-secundario);
     
-
-    background: orange;
-    border: 3px solid #0A3871; 
-    border-radius: 50px;
-    padding: 40px;
-
-    font-family: 'Roboto Mono', monospace;
-
-    font-size: 15px;
-
-    line-height: 20%;
-    cursor: pointer;
+    color: var(--color-cuaternario);
+    
 }
 
-.botonIniciar:hover, .botonAgregar:hover{
-    color: #0A3871;
-    transform: scale(0.9);
+
+
+.btn-primary:hover {
+    
+    background-color: var(--color-primario);
+
+    transform: scale(1.05);
+
 }
 
-/*---------------------------------*/
-.botonesParteDos{
+
+
+.btn-secondary {
+
+    color: var(--color-primario);
+
+}
+
+
+
+.btn-secondary:hover {
+
+    background-color: var(--color-terciario);
+
+    transform: scale(1.05);
+
+}
+
+
+
+/*-////////// CONTENEDORES PRINCIPALES //////////-*/
+
+.contenedorBotones {
+
     display: flex;
-    margin-top: 2%;
-    gap: 6%;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+    padding: 20px;
+
+    flex-grow: 1;
+
 }
 
-.boton-nuevoJuego{
-    width:50%;
-    background: orange;
-    border: 3px solid #0A3871; 
-    border-radius: 50px;
-    padding: 10px;
 
-    font-family: 'Roboto Mono', monospace;
-    font-size: 15px;
 
-    cursor: pointer;
-}
+#mostrarJuego, #ingresoTexto {
 
-.boton-Rendirse{
-    width: 50%;
-    background: orange;
-    border: 3px solid #0A3871; 
-    border-radius: 50px;
-    padding: 10px;
-
-    font-family: 'Roboto Mono', monospace;
-    font-size: 15px;
-
-    
-    cursor: pointer;
-}
-
-.boton-agregarPalabra{
-    width: 50%;
-    background: orange;
-    border: 3px solid #0A3871; 
-    border-radius: 50px;
-    padding: 10px;
-
-    font-family: 'Roboto Mono', monospace;
-    font-size: 15px;
-    cursor: pointer;
-}
-
-.boton-nuevoJuego:hover, .boton-Rendirse:hover, .boton-agregarPalabra:hover{
-    color: #0A3871;
-    transform: scale(0.9);
-}
-
-/*PARA CELULAR TABLET */
-.botonesParaCelularTablet{
     display: none;
-    gap: 3%;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    padding: 20px;
+
+    animation: fadeIn 0.5s ease-in-out;
+
 }
 
-.botonMobile{
-    border: 3px solid #0A3871;
-    border-radius:3px ;
-    background-color: orange;
-    margin-bottom: 2%;
-}
 
-/* ESTILOS DE EL HTML JUEGO */
 
-#micanvas{
+.game-container {
 
     display: flex;
-    width: 80%;
-    height: 74px;
-    
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 15px;
+
+    width: 100%;
+
+    max-width: 960px; /* Ancho máximo para el juego */
+
+    margin: 0 auto;
+
 }
 
-#mostrarPalabrasUsadas{
 
-    display: flex;
-    width: 80%;
+
+/*-////////// CANVAS //////////-*/
+
+#miAhorcado {
+
+    width: 100%;
+
+    max-width: 350px;
+
+}
+
+
+
+#micanvas, #mostrarPalabrasUsadas {
+
+    width: 100%;
+
+    max-width: 400px;
+
     height: 80px;
-    
 
 }
 
-#miAhorcado{
+
+
+/*-////////// BOTONES DEL JUEGO //////////-*/
+
+.botonesParteDos, .contenedorBotones2 {
 
     display: flex;
-    width: 80%;
-    height: 293px;
 
-}
-
-
-/*---------------------------------*/
-
-
-#textoInput{
-    display: none;
-}
-
-#boton-confirmarPalabraNueva{
-    display: none;
-}
-
-#boton-cancelarPalabraNueva{
-    display: none;
-}
-
-#ingresoTexto{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-#textoInput{
-    height: 250px;
-    background-color: orange;
-    border: 2px solid rgb(7, 7, 7);
-    border-radius: 20px;
-    margin: 50px 0 0 0;
-    font-size: 15px;
-    width: 58%;
-    font-family: 'Roboto Mono', monospace;
-}
-
-
-#advertencia{
-    display: none;
-}
-
-#advertencia{
-
-    color: black;
-    margin-top: 5%;
-    font-family: 'Roboto Mono', monospace;
-    text-align: center;
-
-}
-
-.contenedorBotones2{
-    display: flex;
-    gap: 5%;
-}
-
-#boton-confirmarPalabraNueva{
-    margin-top: 5%;
-
-    background: orange;
-    border: 3px solid #0A3871; 
-    border-radius: 50px;
-    padding: 20px;
-    
-    font-family: 'Roboto Mono', monospace;
-
-    font-size: 15px;
-
-    cursor: pointer;
-}
-
-#boton-cancelarPalabraNueva{
-    margin-top: 5%;
-
-    background: orange;
-    border: 3px solid #0A3871; 
-    border-radius: 50px;
-    padding: 20px;
-
-    font-family: 'Roboto Mono', monospace;
-
-    font-size: 15px;
-
-    
-    cursor: pointer;
-}
-
-#boton-confirmarPalabraNueva:hover, #boton-cancelarPalabraNueva:hover{
-    color: #0A3871;
-    transform: scale(0.9);
-}
-
-.footer{
-    display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 1% 0 0 0;
-    width: 100%;
+
+    gap: 16px;
+
+    margin-top: 20px;
+
+    flex-wrap: wrap;
+
+}
+
+
+
+/*-////////// BOTONES PARA CELULAR/TABLET //////////-*/
+
+.botonesParaCelularTablet {
+
+    display: none;
+
+    gap: 6px;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    margin-top: 20px;
+
+    max-width: 90%;
+
+}
+
+
+
+.botonMobile {
+
+    border: 2px solid var(--color-primario);
+
+    border-radius: 8px;
+
+    background-color: var(--color-terciario);
+
+    color: var(--color-primario);
+
+    width: 35px;
+
+    height: 35px;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+}
+
+
+
+.botonMobile:hover {
+
+    background-color: var(--color-primario);
+
+    color: var(--color-cuaternario);
+
+}
+
+
+
+/*-////////// AREA DE TEXTO //////////-*/
+
+.texto-ingresado {
+
+    width: 90%;
+
+    max-width: 500px;
+
+    height: 150px;
+
+    background-color: var(--color-terciario);
+
+    border: 2px solid var(--color-primario);
+
+    border-radius: 20px;
+
+    padding: 15px;
+
+    font-size: 1rem;
+
+    font-family: var(--font-family);
+
+    color: var(--color-primario);
+
+    resize: none;
+
+}
+
+
+
+.texto-ingresado::placeholder {
+
+    color: var(--color-secundario);
+
+}
+
+
+
+.contenedorAdvertencia {
+
+    margin-top: 10px;
+
+    color: var(--color-primario);
+
+    font-size: 0.8rem;
+
     text-align: center;
-    font-family: 'Roboto Mono', monospace;
+
+}
+
+
+
+/*-////////// FOOTER //////////-*/
+
+.footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    width: 100%;
+
+    text-align: center;
+
+    font-family: var(--font-family);
+
+    color: var(--color-cuaternario);
+
+    gap: 15px;
+
+    flex-shrink: 0;
+
 }
 
 
-/*----------------medias----------------*/
 
-@media (max-width: 1024px) {
+.logoGitHub, .logoLinkedin {
+
+    width: 32px;
+
+    height: 32px;
+
+    transition: transform 0.3s ease;
 
 }
+
+
+
+.logoGitHub:hover, .logoLinkedin:hover {
+
+    transform: scale(1.1);
+
+}
+
+
+
+/*-////////// ANIMACIONES //////////-*/
+
+@keyframes fadeIn {
+
+    from { opacity: 0; }
+
+    to { opacity: 1; }
+
+}
+
+
+
+/*-////////// MEDIAS QUERYS //////////-*/
+
+
 
 @media (max-width: 768px) {
 
-
-    #miAhorcado{
-    
-        display: flex;
-        width: 100%;
-        height: 150px;
-    }
-
-
-    #micanvas{
+    .botonesParaCelularTablet {
 
         display: flex;
-        width: 100%;
-        height: 50px;
-    }
-    
-    #mostrarPalabrasUsadas{
-    
-        display: flex;
-        width: 100%;
-        height: 60px;
-        
-    }
-    
-    .botonesParaCelularTablet{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
+
     }
 
-
-    .contenedorBotones2{
-        flex-direction: column;
-    }
 }
 
-@media (max-width: 672px) {
-}
+
 
 @media (max-width: 480px) {
-    .botonesParteDos{
+
+    body {
+
+        font-size: 14px;
+
+    }
+
+
+
+    .btn {
+
+        padding: 15px 20px;
+
+        width: 80%;
+
+    }
+
+
+
+    .botonesParteDos, .contenedorBotones2 {
+
         flex-direction: column;
+
         align-items: center;
+
+        width: 100%;
+
+        gap: 10px;
+
     }
 
-    .boton-nuevoJuego, .boton-Rendirse, .boton-agregarPalabra{
-        margin-bottom: 5%;
+    
+
+    .botonesParaCelularTablet {
+
+        max-width: 100%;
+
+        gap: 5px;
+
+    }
+
+
+
+    .botonMobile {
+
+        width: 30px;
+
+        height: 30px;
+
+        font-size: 0.9rem;
+
+    }
+
+
+
+    .footer {
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        font-size: 0.8rem;
+
     }
 
 }
 
-@media (max-width: 375px) {
 
-}
-
-@media (max-width: 320px) {
-
-
-}
